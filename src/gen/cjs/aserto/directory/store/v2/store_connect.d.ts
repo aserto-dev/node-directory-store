@@ -1,4 +1,4 @@
-import { CreateTenantRequest, CreateTenantResponse, DeleteIDPConnectionRequest, DeleteIDPConnectionResponse, DeleteTenantRequest, DeleteTenantResponse, GetTenantRequest, GetTenantResponse, InfoRequest, InfoResponse, ListTenantsRequest, ListTenantsResponse, MigrateSchemaRequest, MigrateSchemaResponse, PurgeDeletedTenantsRequest, PurgeDeletedTenantsResponse } from "./store_pb.js";
+import { AssignRoleToTenantRequest, AssignRoleToTenantResponse, CreateTenantRequest, CreateTenantResponse, DeleteIDPConnectionRequest, DeleteIDPConnectionResponse, DeleteTenantRequest, DeleteTenantResponse, GetTenantRequest, GetTenantResponse, InfoRequest, InfoResponse, ListTenantMembersRequest, ListTenantMembersResponse, ListTenantsRequest, ListTenantsResponse, ListUserTenantsRequest, ListUserTenantsResponse, MigrateSchemaRequest, MigrateSchemaResponse, PurgeDeletedTenantsRequest, PurgeDeletedTenantsResponse, RemoveRoleFromTenantRequest, RemoveRoleFromTenantResponse } from "./store_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 /**
  * @generated from service aserto.directory.store.v2.Store
@@ -76,6 +76,42 @@ export declare const Store: {
             readonly name: "DeleteIDPConnection";
             readonly I: typeof DeleteIDPConnectionRequest;
             readonly O: typeof DeleteIDPConnectionResponse;
+            readonly kind: MethodKind.Unary;
+        };
+        /**
+         * @generated from rpc aserto.directory.store.v2.Store.ListTenantMembers
+         */
+        readonly listTenantMembers: {
+            readonly name: "ListTenantMembers";
+            readonly I: typeof ListTenantMembersRequest;
+            readonly O: typeof ListTenantMembersResponse;
+            readonly kind: MethodKind.Unary;
+        };
+        /**
+         * @generated from rpc aserto.directory.store.v2.Store.ListUserTenants
+         */
+        readonly listUserTenants: {
+            readonly name: "ListUserTenants";
+            readonly I: typeof ListUserTenantsRequest;
+            readonly O: typeof ListUserTenantsResponse;
+            readonly kind: MethodKind.Unary;
+        };
+        /**
+         * @generated from rpc aserto.directory.store.v2.Store.AssignRoleToTenant
+         */
+        readonly assignRoleToTenant: {
+            readonly name: "AssignRoleToTenant";
+            readonly I: typeof AssignRoleToTenantRequest;
+            readonly O: typeof AssignRoleToTenantResponse;
+            readonly kind: MethodKind.Unary;
+        };
+        /**
+         * @generated from rpc aserto.directory.store.v2.Store.RemoveRoleFromTenant
+         */
+        readonly removeRoleFromTenant: {
+            readonly name: "RemoveRoleFromTenant";
+            readonly I: typeof RemoveRoleFromTenantRequest;
+            readonly O: typeof RemoveRoleFromTenantResponse;
             readonly kind: MethodKind.Unary;
         };
     };

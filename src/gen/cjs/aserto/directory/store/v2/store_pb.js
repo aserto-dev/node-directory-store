@@ -4,7 +4,7 @@
 /* eslint-disable */
 // @ts-nocheck
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteIDPConnectionResponse = exports.DeleteIDPConnectionRequest = exports.InfoResponse = exports.InfoRequest = exports.Migration = exports.MigrateSchemaResponse = exports.MigrateSchemaRequest = exports.PurgeDeletedTenantsResponse = exports.PurgeDeletedTenantsRequest = exports.ListTenantsResponse = exports.ListTenantsRequest = exports.DeleteTenantResponse = exports.DeleteTenantRequest = exports.CreateTenantResponse = exports.CreateTenantRequest = exports.GetTenantResponse = exports.GetTenantRequest = exports.Tenant = exports.Migrate = exports.Schema = void 0;
+exports.DeleteIDPConnectionResponse = exports.DeleteIDPConnectionRequest = exports.InfoResponse = exports.InfoRequest = exports.Migration = exports.MigrateSchemaResponse = exports.MigrateSchemaRequest = exports.PurgeDeletedTenantsResponse = exports.PurgeDeletedTenantsRequest = exports.ListTenantsResponse = exports.ListTenantsRequest = exports.DeleteTenantResponse = exports.DeleteTenantRequest = exports.CreateTenantResponse = exports.CreateTenantRequest = exports.GetTenantResponse = exports.GetTenantRequest = exports.ListUserTenantsResponse = exports.ListUserTenantsRequest = exports.RemoveRoleFromTenantResponse = exports.RemoveRoleFromTenantRequest = exports.AssignRoleToTenantResponse = exports.AssignRoleToTenantRequest = exports.ListTenantMembersResponse = exports.ListTenantMembersRequest = exports.Tenant = exports.TenantMember = exports.Migrate = exports.Schema = void 0;
 const protobuf_1 = require("@bufbuild/protobuf");
 const common_pb_js_1 = require("../../common/v2/common_pb.js");
 /**
@@ -56,6 +56,47 @@ protobuf_1.proto3.util.setEnumType(Migrate, "aserto.directory.store.v2.Migrate",
     { no: 2, name: "MIGRATE_DOWN" },
 ]);
 /**
+ * @generated from message aserto.directory.store.v2.TenantMember
+ */
+class TenantMember extends protobuf_1.Message {
+    constructor(data) {
+        super();
+        /**
+         * @generated from field: string id = 1;
+         */
+        this.id = "";
+        /**
+         * @generated from field: string type = 2;
+         */
+        this.type = "";
+        /**
+         * @generated from field: repeated string roles = 3;
+         */
+        this.roles = [];
+        protobuf_1.proto3.util.initPartial(data, this);
+    }
+    static fromBinary(bytes, options) {
+        return new TenantMember().fromBinary(bytes, options);
+    }
+    static fromJson(jsonValue, options) {
+        return new TenantMember().fromJson(jsonValue, options);
+    }
+    static fromJsonString(jsonString, options) {
+        return new TenantMember().fromJsonString(jsonString, options);
+    }
+    static equals(a, b) {
+        return protobuf_1.proto3.util.equals(TenantMember, a, b);
+    }
+}
+exports.TenantMember = TenantMember;
+TenantMember.runtime = protobuf_1.proto3;
+TenantMember.typeName = "aserto.directory.store.v2.TenantMember";
+TenantMember.fields = protobuf_1.proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "roles", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+]);
+/**
  * @generated from message aserto.directory.store.v2.Tenant
  */
 class Tenant extends protobuf_1.Message {
@@ -97,6 +138,270 @@ Tenant.fields = protobuf_1.proto3.util.newFieldList(() => [
     { no: 20, name: "created_at", kind: "message", T: protobuf_1.Timestamp },
     { no: 21, name: "updated_at", kind: "message", T: protobuf_1.Timestamp },
     { no: 22, name: "deleted_at", kind: "message", T: protobuf_1.Timestamp },
+]);
+/**
+ * @generated from message aserto.directory.store.v2.ListTenantMembersRequest
+ */
+class ListTenantMembersRequest extends protobuf_1.Message {
+    constructor(data) {
+        super();
+        /**
+         * @generated from field: string id = 1;
+         */
+        this.id = "";
+        protobuf_1.proto3.util.initPartial(data, this);
+    }
+    static fromBinary(bytes, options) {
+        return new ListTenantMembersRequest().fromBinary(bytes, options);
+    }
+    static fromJson(jsonValue, options) {
+        return new ListTenantMembersRequest().fromJson(jsonValue, options);
+    }
+    static fromJsonString(jsonString, options) {
+        return new ListTenantMembersRequest().fromJsonString(jsonString, options);
+    }
+    static equals(a, b) {
+        return protobuf_1.proto3.util.equals(ListTenantMembersRequest, a, b);
+    }
+}
+exports.ListTenantMembersRequest = ListTenantMembersRequest;
+ListTenantMembersRequest.runtime = protobuf_1.proto3;
+ListTenantMembersRequest.typeName = "aserto.directory.store.v2.ListTenantMembersRequest";
+ListTenantMembersRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "page", kind: "message", T: common_pb_js_1.PaginationRequest },
+]);
+/**
+ * @generated from message aserto.directory.store.v2.ListTenantMembersResponse
+ */
+class ListTenantMembersResponse extends protobuf_1.Message {
+    constructor(data) {
+        super();
+        /**
+         * @generated from field: repeated aserto.directory.store.v2.TenantMember results = 1;
+         */
+        this.results = [];
+        protobuf_1.proto3.util.initPartial(data, this);
+    }
+    static fromBinary(bytes, options) {
+        return new ListTenantMembersResponse().fromBinary(bytes, options);
+    }
+    static fromJson(jsonValue, options) {
+        return new ListTenantMembersResponse().fromJson(jsonValue, options);
+    }
+    static fromJsonString(jsonString, options) {
+        return new ListTenantMembersResponse().fromJsonString(jsonString, options);
+    }
+    static equals(a, b) {
+        return protobuf_1.proto3.util.equals(ListTenantMembersResponse, a, b);
+    }
+}
+exports.ListTenantMembersResponse = ListTenantMembersResponse;
+ListTenantMembersResponse.runtime = protobuf_1.proto3;
+ListTenantMembersResponse.typeName = "aserto.directory.store.v2.ListTenantMembersResponse";
+ListTenantMembersResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
+    { no: 1, name: "results", kind: "message", T: TenantMember, repeated: true },
+    { no: 9, name: "page", kind: "message", T: common_pb_js_1.PaginationResponse },
+]);
+/**
+ * @generated from message aserto.directory.store.v2.AssignRoleToTenantRequest
+ */
+class AssignRoleToTenantRequest extends protobuf_1.Message {
+    constructor(data) {
+        super();
+        /**
+         * @generated from field: string tenant_id = 1;
+         */
+        this.tenantId = "";
+        /**
+         * @generated from field: string user_id = 2;
+         */
+        this.userId = "";
+        /**
+         * @generated from field: string role = 3;
+         */
+        this.role = "";
+        protobuf_1.proto3.util.initPartial(data, this);
+    }
+    static fromBinary(bytes, options) {
+        return new AssignRoleToTenantRequest().fromBinary(bytes, options);
+    }
+    static fromJson(jsonValue, options) {
+        return new AssignRoleToTenantRequest().fromJson(jsonValue, options);
+    }
+    static fromJsonString(jsonString, options) {
+        return new AssignRoleToTenantRequest().fromJsonString(jsonString, options);
+    }
+    static equals(a, b) {
+        return protobuf_1.proto3.util.equals(AssignRoleToTenantRequest, a, b);
+    }
+}
+exports.AssignRoleToTenantRequest = AssignRoleToTenantRequest;
+AssignRoleToTenantRequest.runtime = protobuf_1.proto3;
+AssignRoleToTenantRequest.typeName = "aserto.directory.store.v2.AssignRoleToTenantRequest";
+AssignRoleToTenantRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
+    { no: 1, name: "tenant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+]);
+/**
+ * @generated from message aserto.directory.store.v2.AssignRoleToTenantResponse
+ */
+class AssignRoleToTenantResponse extends protobuf_1.Message {
+    constructor(data) {
+        super();
+        protobuf_1.proto3.util.initPartial(data, this);
+    }
+    static fromBinary(bytes, options) {
+        return new AssignRoleToTenantResponse().fromBinary(bytes, options);
+    }
+    static fromJson(jsonValue, options) {
+        return new AssignRoleToTenantResponse().fromJson(jsonValue, options);
+    }
+    static fromJsonString(jsonString, options) {
+        return new AssignRoleToTenantResponse().fromJsonString(jsonString, options);
+    }
+    static equals(a, b) {
+        return protobuf_1.proto3.util.equals(AssignRoleToTenantResponse, a, b);
+    }
+}
+exports.AssignRoleToTenantResponse = AssignRoleToTenantResponse;
+AssignRoleToTenantResponse.runtime = protobuf_1.proto3;
+AssignRoleToTenantResponse.typeName = "aserto.directory.store.v2.AssignRoleToTenantResponse";
+AssignRoleToTenantResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
+    { no: 1, name: "result", kind: "message", T: protobuf_1.Empty },
+]);
+/**
+ * @generated from message aserto.directory.store.v2.RemoveRoleFromTenantRequest
+ */
+class RemoveRoleFromTenantRequest extends protobuf_1.Message {
+    constructor(data) {
+        super();
+        /**
+         * @generated from field: string tenant_id = 1;
+         */
+        this.tenantId = "";
+        /**
+         * @generated from field: string user_id = 2;
+         */
+        this.userId = "";
+        /**
+         * @generated from field: string role = 3;
+         */
+        this.role = "";
+        protobuf_1.proto3.util.initPartial(data, this);
+    }
+    static fromBinary(bytes, options) {
+        return new RemoveRoleFromTenantRequest().fromBinary(bytes, options);
+    }
+    static fromJson(jsonValue, options) {
+        return new RemoveRoleFromTenantRequest().fromJson(jsonValue, options);
+    }
+    static fromJsonString(jsonString, options) {
+        return new RemoveRoleFromTenantRequest().fromJsonString(jsonString, options);
+    }
+    static equals(a, b) {
+        return protobuf_1.proto3.util.equals(RemoveRoleFromTenantRequest, a, b);
+    }
+}
+exports.RemoveRoleFromTenantRequest = RemoveRoleFromTenantRequest;
+RemoveRoleFromTenantRequest.runtime = protobuf_1.proto3;
+RemoveRoleFromTenantRequest.typeName = "aserto.directory.store.v2.RemoveRoleFromTenantRequest";
+RemoveRoleFromTenantRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
+    { no: 1, name: "tenant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+]);
+/**
+ * @generated from message aserto.directory.store.v2.RemoveRoleFromTenantResponse
+ */
+class RemoveRoleFromTenantResponse extends protobuf_1.Message {
+    constructor(data) {
+        super();
+        protobuf_1.proto3.util.initPartial(data, this);
+    }
+    static fromBinary(bytes, options) {
+        return new RemoveRoleFromTenantResponse().fromBinary(bytes, options);
+    }
+    static fromJson(jsonValue, options) {
+        return new RemoveRoleFromTenantResponse().fromJson(jsonValue, options);
+    }
+    static fromJsonString(jsonString, options) {
+        return new RemoveRoleFromTenantResponse().fromJsonString(jsonString, options);
+    }
+    static equals(a, b) {
+        return protobuf_1.proto3.util.equals(RemoveRoleFromTenantResponse, a, b);
+    }
+}
+exports.RemoveRoleFromTenantResponse = RemoveRoleFromTenantResponse;
+RemoveRoleFromTenantResponse.runtime = protobuf_1.proto3;
+RemoveRoleFromTenantResponse.typeName = "aserto.directory.store.v2.RemoveRoleFromTenantResponse";
+RemoveRoleFromTenantResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
+    { no: 1, name: "result", kind: "message", T: protobuf_1.Empty },
+]);
+/**
+ * @generated from message aserto.directory.store.v2.ListUserTenantsRequest
+ */
+class ListUserTenantsRequest extends protobuf_1.Message {
+    constructor(data) {
+        super();
+        /**
+         * @generated from field: string id = 1;
+         */
+        this.id = "";
+        protobuf_1.proto3.util.initPartial(data, this);
+    }
+    static fromBinary(bytes, options) {
+        return new ListUserTenantsRequest().fromBinary(bytes, options);
+    }
+    static fromJson(jsonValue, options) {
+        return new ListUserTenantsRequest().fromJson(jsonValue, options);
+    }
+    static fromJsonString(jsonString, options) {
+        return new ListUserTenantsRequest().fromJsonString(jsonString, options);
+    }
+    static equals(a, b) {
+        return protobuf_1.proto3.util.equals(ListUserTenantsRequest, a, b);
+    }
+}
+exports.ListUserTenantsRequest = ListUserTenantsRequest;
+ListUserTenantsRequest.runtime = protobuf_1.proto3;
+ListUserTenantsRequest.typeName = "aserto.directory.store.v2.ListUserTenantsRequest";
+ListUserTenantsRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "page", kind: "message", T: common_pb_js_1.PaginationRequest },
+]);
+/**
+ * @generated from message aserto.directory.store.v2.ListUserTenantsResponse
+ */
+class ListUserTenantsResponse extends protobuf_1.Message {
+    constructor(data) {
+        super();
+        /**
+         * @generated from field: repeated aserto.directory.store.v2.Tenant results = 1;
+         */
+        this.results = [];
+        protobuf_1.proto3.util.initPartial(data, this);
+    }
+    static fromBinary(bytes, options) {
+        return new ListUserTenantsResponse().fromBinary(bytes, options);
+    }
+    static fromJson(jsonValue, options) {
+        return new ListUserTenantsResponse().fromJson(jsonValue, options);
+    }
+    static fromJsonString(jsonString, options) {
+        return new ListUserTenantsResponse().fromJsonString(jsonString, options);
+    }
+    static equals(a, b) {
+        return protobuf_1.proto3.util.equals(ListUserTenantsResponse, a, b);
+    }
+}
+exports.ListUserTenantsResponse = ListUserTenantsResponse;
+ListUserTenantsResponse.runtime = protobuf_1.proto3;
+ListUserTenantsResponse.typeName = "aserto.directory.store.v2.ListUserTenantsResponse";
+ListUserTenantsResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
+    { no: 1, name: "results", kind: "message", T: Tenant, repeated: true },
+    { no: 9, name: "page", kind: "message", T: common_pb_js_1.PaginationResponse },
 ]);
 /**
  * @generated from message aserto.directory.store.v2.GetTenantRequest

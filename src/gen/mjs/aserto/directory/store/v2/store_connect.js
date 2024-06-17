@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateTenantRequest, CreateTenantResponse, DeleteIDPConnectionRequest, DeleteIDPConnectionResponse, DeleteTenantRequest, DeleteTenantResponse, GetTenantRequest, GetTenantResponse, InfoRequest, InfoResponse, ListTenantsRequest, ListTenantsResponse, MigrateSchemaRequest, MigrateSchemaResponse, PurgeDeletedTenantsRequest, PurgeDeletedTenantsResponse } from "./store_pb.js";
+import { AssignRoleToTenantRequest, AssignRoleToTenantResponse, CreateTenantRequest, CreateTenantResponse, DeleteIDPConnectionRequest, DeleteIDPConnectionResponse, DeleteTenantRequest, DeleteTenantResponse, GetTenantRequest, GetTenantResponse, InfoRequest, InfoResponse, ListTenantMembersRequest, ListTenantMembersResponse, ListTenantsRequest, ListTenantsResponse, ListUserTenantsRequest, ListUserTenantsResponse, MigrateSchemaRequest, MigrateSchemaResponse, PurgeDeletedTenantsRequest, PurgeDeletedTenantsResponse, RemoveRoleFromTenantRequest, RemoveRoleFromTenantResponse } from "./store_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -82,6 +82,42 @@ export const Store = {
       name: "DeleteIDPConnection",
       I: DeleteIDPConnectionRequest,
       O: DeleteIDPConnectionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.ListTenantMembers
+     */
+    listTenantMembers: {
+      name: "ListTenantMembers",
+      I: ListTenantMembersRequest,
+      O: ListTenantMembersResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.ListUserTenants
+     */
+    listUserTenants: {
+      name: "ListUserTenants",
+      I: ListUserTenantsRequest,
+      O: ListUserTenantsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.AssignRoleToTenant
+     */
+    assignRoleToTenant: {
+      name: "AssignRoleToTenant",
+      I: AssignRoleToTenantRequest,
+      O: AssignRoleToTenantResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.RemoveRoleFromTenant
+     */
+    removeRoleFromTenant: {
+      name: "RemoveRoleFromTenant",
+      I: RemoveRoleFromTenantRequest,
+      O: RemoveRoleFromTenantResponse,
       kind: MethodKind.Unary,
     },
   }
