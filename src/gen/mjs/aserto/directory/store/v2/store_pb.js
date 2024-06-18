@@ -31,6 +31,18 @@ export const Migrate = /*@__PURE__*/ proto3.makeEnum(
 );
 
 /**
+ * @generated from message aserto.directory.store.v2.TenantMember
+ */
+export const TenantMember = /*@__PURE__*/ proto3.makeMessageType(
+  "aserto.directory.store.v2.TenantMember",
+  () => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "roles", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
+/**
  * @generated from message aserto.directory.store.v2.Tenant
  */
 export const Tenant = /*@__PURE__*/ proto3.makeMessageType(
@@ -41,6 +53,94 @@ export const Tenant = /*@__PURE__*/ proto3.makeMessageType(
     { no: 20, name: "created_at", kind: "message", T: Timestamp },
     { no: 21, name: "updated_at", kind: "message", T: Timestamp },
     { no: 22, name: "deleted_at", kind: "message", T: Timestamp },
+  ],
+);
+
+/**
+ * @generated from message aserto.directory.store.v2.ListTenantMembersRequest
+ */
+export const ListTenantMembersRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "aserto.directory.store.v2.ListTenantMembersRequest",
+  () => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "page", kind: "message", T: PaginationRequest },
+  ],
+);
+
+/**
+ * @generated from message aserto.directory.store.v2.ListTenantMembersResponse
+ */
+export const ListTenantMembersResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "aserto.directory.store.v2.ListTenantMembersResponse",
+  () => [
+    { no: 1, name: "results", kind: "message", T: TenantMember, repeated: true },
+    { no: 9, name: "page", kind: "message", T: PaginationResponse },
+  ],
+);
+
+/**
+ * @generated from message aserto.directory.store.v2.AssignRoleToTenantRequest
+ */
+export const AssignRoleToTenantRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "aserto.directory.store.v2.AssignRoleToTenantRequest",
+  () => [
+    { no: 1, name: "tenant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message aserto.directory.store.v2.AssignRoleToTenantResponse
+ */
+export const AssignRoleToTenantResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "aserto.directory.store.v2.AssignRoleToTenantResponse",
+  () => [
+    { no: 1, name: "result", kind: "message", T: Empty },
+  ],
+);
+
+/**
+ * @generated from message aserto.directory.store.v2.RemoveRoleFromTenantRequest
+ */
+export const RemoveRoleFromTenantRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "aserto.directory.store.v2.RemoveRoleFromTenantRequest",
+  () => [
+    { no: 1, name: "tenant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message aserto.directory.store.v2.RemoveRoleFromTenantResponse
+ */
+export const RemoveRoleFromTenantResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "aserto.directory.store.v2.RemoveRoleFromTenantResponse",
+  () => [
+    { no: 1, name: "result", kind: "message", T: Empty },
+  ],
+);
+
+/**
+ * @generated from message aserto.directory.store.v2.ListUserTenantsRequest
+ */
+export const ListUserTenantsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "aserto.directory.store.v2.ListUserTenantsRequest",
+  () => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "page", kind: "message", T: PaginationRequest },
+  ],
+);
+
+/**
+ * @generated from message aserto.directory.store.v2.ListUserTenantsResponse
+ */
+export const ListUserTenantsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "aserto.directory.store.v2.ListUserTenantsResponse",
+  () => [
+    { no: 1, name: "results", kind: "message", T: Tenant, repeated: true },
+    { no: 9, name: "page", kind: "message", T: PaginationResponse },
   ],
 );
 

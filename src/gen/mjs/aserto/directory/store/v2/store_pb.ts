@@ -60,6 +60,55 @@ proto3.util.setEnumType(Migrate, "aserto.directory.store.v2.Migrate", [
 ]);
 
 /**
+ * @generated from message aserto.directory.store.v2.TenantMember
+ */
+export class TenantMember extends Message<TenantMember> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string type = 2;
+   */
+  type = "";
+
+  /**
+   * @generated from field: repeated string roles = 3;
+   */
+  roles: string[] = [];
+
+  constructor(data?: PartialMessage<TenantMember>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "aserto.directory.store.v2.TenantMember";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "roles", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TenantMember {
+    return new TenantMember().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TenantMember {
+    return new TenantMember().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TenantMember {
+    return new TenantMember().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: TenantMember | PlainMessage<TenantMember> | undefined, b: TenantMember | PlainMessage<TenantMember> | undefined): boolean {
+    return proto3.util.equals(TenantMember, a, b);
+  }
+}
+
+/**
  * @generated from message aserto.directory.store.v2.Tenant
  */
 export class Tenant extends Message<Tenant> {
@@ -127,6 +176,350 @@ export class Tenant extends Message<Tenant> {
 
   static equals(a: Tenant | PlainMessage<Tenant> | undefined, b: Tenant | PlainMessage<Tenant> | undefined): boolean {
     return proto3.util.equals(Tenant, a, b);
+  }
+}
+
+/**
+ * @generated from message aserto.directory.store.v2.ListTenantMembersRequest
+ */
+export class ListTenantMembersRequest extends Message<ListTenantMembersRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: aserto.directory.common.v2.PaginationRequest page = 9;
+   */
+  page?: PaginationRequest;
+
+  constructor(data?: PartialMessage<ListTenantMembersRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "aserto.directory.store.v2.ListTenantMembersRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "page", kind: "message", T: PaginationRequest },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTenantMembersRequest {
+    return new ListTenantMembersRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTenantMembersRequest {
+    return new ListTenantMembersRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTenantMembersRequest {
+    return new ListTenantMembersRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListTenantMembersRequest | PlainMessage<ListTenantMembersRequest> | undefined, b: ListTenantMembersRequest | PlainMessage<ListTenantMembersRequest> | undefined): boolean {
+    return proto3.util.equals(ListTenantMembersRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message aserto.directory.store.v2.ListTenantMembersResponse
+ */
+export class ListTenantMembersResponse extends Message<ListTenantMembersResponse> {
+  /**
+   * @generated from field: repeated aserto.directory.store.v2.TenantMember results = 1;
+   */
+  results: TenantMember[] = [];
+
+  /**
+   * @generated from field: aserto.directory.common.v2.PaginationResponse page = 9;
+   */
+  page?: PaginationResponse;
+
+  constructor(data?: PartialMessage<ListTenantMembersResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "aserto.directory.store.v2.ListTenantMembersResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "results", kind: "message", T: TenantMember, repeated: true },
+    { no: 9, name: "page", kind: "message", T: PaginationResponse },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTenantMembersResponse {
+    return new ListTenantMembersResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTenantMembersResponse {
+    return new ListTenantMembersResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTenantMembersResponse {
+    return new ListTenantMembersResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListTenantMembersResponse | PlainMessage<ListTenantMembersResponse> | undefined, b: ListTenantMembersResponse | PlainMessage<ListTenantMembersResponse> | undefined): boolean {
+    return proto3.util.equals(ListTenantMembersResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message aserto.directory.store.v2.AssignRoleToTenantRequest
+ */
+export class AssignRoleToTenantRequest extends Message<AssignRoleToTenantRequest> {
+  /**
+   * @generated from field: string tenant_id = 1;
+   */
+  tenantId = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string role = 3;
+   */
+  role = "";
+
+  constructor(data?: PartialMessage<AssignRoleToTenantRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "aserto.directory.store.v2.AssignRoleToTenantRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "tenant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignRoleToTenantRequest {
+    return new AssignRoleToTenantRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignRoleToTenantRequest {
+    return new AssignRoleToTenantRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignRoleToTenantRequest {
+    return new AssignRoleToTenantRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AssignRoleToTenantRequest | PlainMessage<AssignRoleToTenantRequest> | undefined, b: AssignRoleToTenantRequest | PlainMessage<AssignRoleToTenantRequest> | undefined): boolean {
+    return proto3.util.equals(AssignRoleToTenantRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message aserto.directory.store.v2.AssignRoleToTenantResponse
+ */
+export class AssignRoleToTenantResponse extends Message<AssignRoleToTenantResponse> {
+  /**
+   * @generated from field: google.protobuf.Empty result = 1;
+   */
+  result?: Empty;
+
+  constructor(data?: PartialMessage<AssignRoleToTenantResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "aserto.directory.store.v2.AssignRoleToTenantResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "result", kind: "message", T: Empty },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignRoleToTenantResponse {
+    return new AssignRoleToTenantResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignRoleToTenantResponse {
+    return new AssignRoleToTenantResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignRoleToTenantResponse {
+    return new AssignRoleToTenantResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AssignRoleToTenantResponse | PlainMessage<AssignRoleToTenantResponse> | undefined, b: AssignRoleToTenantResponse | PlainMessage<AssignRoleToTenantResponse> | undefined): boolean {
+    return proto3.util.equals(AssignRoleToTenantResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message aserto.directory.store.v2.RemoveRoleFromTenantRequest
+ */
+export class RemoveRoleFromTenantRequest extends Message<RemoveRoleFromTenantRequest> {
+  /**
+   * @generated from field: string tenant_id = 1;
+   */
+  tenantId = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string role = 3;
+   */
+  role = "";
+
+  constructor(data?: PartialMessage<RemoveRoleFromTenantRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "aserto.directory.store.v2.RemoveRoleFromTenantRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "tenant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveRoleFromTenantRequest {
+    return new RemoveRoleFromTenantRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveRoleFromTenantRequest {
+    return new RemoveRoleFromTenantRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveRoleFromTenantRequest {
+    return new RemoveRoleFromTenantRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RemoveRoleFromTenantRequest | PlainMessage<RemoveRoleFromTenantRequest> | undefined, b: RemoveRoleFromTenantRequest | PlainMessage<RemoveRoleFromTenantRequest> | undefined): boolean {
+    return proto3.util.equals(RemoveRoleFromTenantRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message aserto.directory.store.v2.RemoveRoleFromTenantResponse
+ */
+export class RemoveRoleFromTenantResponse extends Message<RemoveRoleFromTenantResponse> {
+  /**
+   * @generated from field: google.protobuf.Empty result = 1;
+   */
+  result?: Empty;
+
+  constructor(data?: PartialMessage<RemoveRoleFromTenantResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "aserto.directory.store.v2.RemoveRoleFromTenantResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "result", kind: "message", T: Empty },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveRoleFromTenantResponse {
+    return new RemoveRoleFromTenantResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveRoleFromTenantResponse {
+    return new RemoveRoleFromTenantResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveRoleFromTenantResponse {
+    return new RemoveRoleFromTenantResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RemoveRoleFromTenantResponse | PlainMessage<RemoveRoleFromTenantResponse> | undefined, b: RemoveRoleFromTenantResponse | PlainMessage<RemoveRoleFromTenantResponse> | undefined): boolean {
+    return proto3.util.equals(RemoveRoleFromTenantResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message aserto.directory.store.v2.ListUserTenantsRequest
+ */
+export class ListUserTenantsRequest extends Message<ListUserTenantsRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: aserto.directory.common.v2.PaginationRequest page = 9;
+   */
+  page?: PaginationRequest;
+
+  constructor(data?: PartialMessage<ListUserTenantsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "aserto.directory.store.v2.ListUserTenantsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "page", kind: "message", T: PaginationRequest },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUserTenantsRequest {
+    return new ListUserTenantsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUserTenantsRequest {
+    return new ListUserTenantsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUserTenantsRequest {
+    return new ListUserTenantsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListUserTenantsRequest | PlainMessage<ListUserTenantsRequest> | undefined, b: ListUserTenantsRequest | PlainMessage<ListUserTenantsRequest> | undefined): boolean {
+    return proto3.util.equals(ListUserTenantsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message aserto.directory.store.v2.ListUserTenantsResponse
+ */
+export class ListUserTenantsResponse extends Message<ListUserTenantsResponse> {
+  /**
+   * @generated from field: repeated aserto.directory.store.v2.Tenant results = 1;
+   */
+  results: Tenant[] = [];
+
+  /**
+   * @generated from field: aserto.directory.common.v2.PaginationResponse page = 9;
+   */
+  page?: PaginationResponse;
+
+  constructor(data?: PartialMessage<ListUserTenantsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "aserto.directory.store.v2.ListUserTenantsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "results", kind: "message", T: Tenant, repeated: true },
+    { no: 9, name: "page", kind: "message", T: PaginationResponse },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUserTenantsResponse {
+    return new ListUserTenantsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUserTenantsResponse {
+    return new ListUserTenantsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUserTenantsResponse {
+    return new ListUserTenantsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListUserTenantsResponse | PlainMessage<ListUserTenantsResponse> | undefined, b: ListUserTenantsResponse | PlainMessage<ListUserTenantsResponse> | undefined): boolean {
+    return proto3.util.equals(ListUserTenantsResponse, a, b);
   }
 }
 

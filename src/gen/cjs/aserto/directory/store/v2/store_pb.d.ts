@@ -36,6 +36,31 @@ export declare enum Migrate {
     DOWN = 2
 }
 /**
+ * @generated from message aserto.directory.store.v2.TenantMember
+ */
+export declare class TenantMember extends Message<TenantMember> {
+    /**
+     * @generated from field: string id = 1;
+     */
+    id: string;
+    /**
+     * @generated from field: string type = 2;
+     */
+    type: string;
+    /**
+     * @generated from field: repeated string roles = 3;
+     */
+    roles: string[];
+    constructor(data?: PartialMessage<TenantMember>);
+    static readonly runtime: typeof proto3;
+    static readonly typeName = "aserto.directory.store.v2.TenantMember";
+    static readonly fields: FieldList;
+    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TenantMember;
+    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TenantMember;
+    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TenantMember;
+    static equals(a: TenantMember | PlainMessage<TenantMember> | undefined, b: TenantMember | PlainMessage<TenantMember> | undefined): boolean;
+}
+/**
  * @generated from message aserto.directory.store.v2.Tenant
  */
 export declare class Tenant extends Message<Tenant> {
@@ -77,6 +102,174 @@ export declare class Tenant extends Message<Tenant> {
     static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Tenant;
     static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Tenant;
     static equals(a: Tenant | PlainMessage<Tenant> | undefined, b: Tenant | PlainMessage<Tenant> | undefined): boolean;
+}
+/**
+ * @generated from message aserto.directory.store.v2.ListTenantMembersRequest
+ */
+export declare class ListTenantMembersRequest extends Message<ListTenantMembersRequest> {
+    /**
+     * @generated from field: string id = 1;
+     */
+    id: string;
+    /**
+     * @generated from field: aserto.directory.common.v2.PaginationRequest page = 9;
+     */
+    page?: PaginationRequest;
+    constructor(data?: PartialMessage<ListTenantMembersRequest>);
+    static readonly runtime: typeof proto3;
+    static readonly typeName = "aserto.directory.store.v2.ListTenantMembersRequest";
+    static readonly fields: FieldList;
+    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTenantMembersRequest;
+    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTenantMembersRequest;
+    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTenantMembersRequest;
+    static equals(a: ListTenantMembersRequest | PlainMessage<ListTenantMembersRequest> | undefined, b: ListTenantMembersRequest | PlainMessage<ListTenantMembersRequest> | undefined): boolean;
+}
+/**
+ * @generated from message aserto.directory.store.v2.ListTenantMembersResponse
+ */
+export declare class ListTenantMembersResponse extends Message<ListTenantMembersResponse> {
+    /**
+     * @generated from field: repeated aserto.directory.store.v2.TenantMember results = 1;
+     */
+    results: TenantMember[];
+    /**
+     * @generated from field: aserto.directory.common.v2.PaginationResponse page = 9;
+     */
+    page?: PaginationResponse;
+    constructor(data?: PartialMessage<ListTenantMembersResponse>);
+    static readonly runtime: typeof proto3;
+    static readonly typeName = "aserto.directory.store.v2.ListTenantMembersResponse";
+    static readonly fields: FieldList;
+    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTenantMembersResponse;
+    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTenantMembersResponse;
+    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTenantMembersResponse;
+    static equals(a: ListTenantMembersResponse | PlainMessage<ListTenantMembersResponse> | undefined, b: ListTenantMembersResponse | PlainMessage<ListTenantMembersResponse> | undefined): boolean;
+}
+/**
+ * @generated from message aserto.directory.store.v2.AssignRoleToTenantRequest
+ */
+export declare class AssignRoleToTenantRequest extends Message<AssignRoleToTenantRequest> {
+    /**
+     * @generated from field: string tenant_id = 1;
+     */
+    tenantId: string;
+    /**
+     * @generated from field: string user_id = 2;
+     */
+    userId: string;
+    /**
+     * @generated from field: string role = 3;
+     */
+    role: string;
+    constructor(data?: PartialMessage<AssignRoleToTenantRequest>);
+    static readonly runtime: typeof proto3;
+    static readonly typeName = "aserto.directory.store.v2.AssignRoleToTenantRequest";
+    static readonly fields: FieldList;
+    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignRoleToTenantRequest;
+    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignRoleToTenantRequest;
+    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignRoleToTenantRequest;
+    static equals(a: AssignRoleToTenantRequest | PlainMessage<AssignRoleToTenantRequest> | undefined, b: AssignRoleToTenantRequest | PlainMessage<AssignRoleToTenantRequest> | undefined): boolean;
+}
+/**
+ * @generated from message aserto.directory.store.v2.AssignRoleToTenantResponse
+ */
+export declare class AssignRoleToTenantResponse extends Message<AssignRoleToTenantResponse> {
+    /**
+     * @generated from field: google.protobuf.Empty result = 1;
+     */
+    result?: Empty;
+    constructor(data?: PartialMessage<AssignRoleToTenantResponse>);
+    static readonly runtime: typeof proto3;
+    static readonly typeName = "aserto.directory.store.v2.AssignRoleToTenantResponse";
+    static readonly fields: FieldList;
+    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignRoleToTenantResponse;
+    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignRoleToTenantResponse;
+    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignRoleToTenantResponse;
+    static equals(a: AssignRoleToTenantResponse | PlainMessage<AssignRoleToTenantResponse> | undefined, b: AssignRoleToTenantResponse | PlainMessage<AssignRoleToTenantResponse> | undefined): boolean;
+}
+/**
+ * @generated from message aserto.directory.store.v2.RemoveRoleFromTenantRequest
+ */
+export declare class RemoveRoleFromTenantRequest extends Message<RemoveRoleFromTenantRequest> {
+    /**
+     * @generated from field: string tenant_id = 1;
+     */
+    tenantId: string;
+    /**
+     * @generated from field: string user_id = 2;
+     */
+    userId: string;
+    /**
+     * @generated from field: string role = 3;
+     */
+    role: string;
+    constructor(data?: PartialMessage<RemoveRoleFromTenantRequest>);
+    static readonly runtime: typeof proto3;
+    static readonly typeName = "aserto.directory.store.v2.RemoveRoleFromTenantRequest";
+    static readonly fields: FieldList;
+    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveRoleFromTenantRequest;
+    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveRoleFromTenantRequest;
+    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveRoleFromTenantRequest;
+    static equals(a: RemoveRoleFromTenantRequest | PlainMessage<RemoveRoleFromTenantRequest> | undefined, b: RemoveRoleFromTenantRequest | PlainMessage<RemoveRoleFromTenantRequest> | undefined): boolean;
+}
+/**
+ * @generated from message aserto.directory.store.v2.RemoveRoleFromTenantResponse
+ */
+export declare class RemoveRoleFromTenantResponse extends Message<RemoveRoleFromTenantResponse> {
+    /**
+     * @generated from field: google.protobuf.Empty result = 1;
+     */
+    result?: Empty;
+    constructor(data?: PartialMessage<RemoveRoleFromTenantResponse>);
+    static readonly runtime: typeof proto3;
+    static readonly typeName = "aserto.directory.store.v2.RemoveRoleFromTenantResponse";
+    static readonly fields: FieldList;
+    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveRoleFromTenantResponse;
+    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveRoleFromTenantResponse;
+    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveRoleFromTenantResponse;
+    static equals(a: RemoveRoleFromTenantResponse | PlainMessage<RemoveRoleFromTenantResponse> | undefined, b: RemoveRoleFromTenantResponse | PlainMessage<RemoveRoleFromTenantResponse> | undefined): boolean;
+}
+/**
+ * @generated from message aserto.directory.store.v2.ListUserTenantsRequest
+ */
+export declare class ListUserTenantsRequest extends Message<ListUserTenantsRequest> {
+    /**
+     * @generated from field: string id = 1;
+     */
+    id: string;
+    /**
+     * @generated from field: aserto.directory.common.v2.PaginationRequest page = 9;
+     */
+    page?: PaginationRequest;
+    constructor(data?: PartialMessage<ListUserTenantsRequest>);
+    static readonly runtime: typeof proto3;
+    static readonly typeName = "aserto.directory.store.v2.ListUserTenantsRequest";
+    static readonly fields: FieldList;
+    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUserTenantsRequest;
+    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUserTenantsRequest;
+    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUserTenantsRequest;
+    static equals(a: ListUserTenantsRequest | PlainMessage<ListUserTenantsRequest> | undefined, b: ListUserTenantsRequest | PlainMessage<ListUserTenantsRequest> | undefined): boolean;
+}
+/**
+ * @generated from message aserto.directory.store.v2.ListUserTenantsResponse
+ */
+export declare class ListUserTenantsResponse extends Message<ListUserTenantsResponse> {
+    /**
+     * @generated from field: repeated aserto.directory.store.v2.Tenant results = 1;
+     */
+    results: Tenant[];
+    /**
+     * @generated from field: aserto.directory.common.v2.PaginationResponse page = 9;
+     */
+    page?: PaginationResponse;
+    constructor(data?: PartialMessage<ListUserTenantsResponse>);
+    static readonly runtime: typeof proto3;
+    static readonly typeName = "aserto.directory.store.v2.ListUserTenantsResponse";
+    static readonly fields: FieldList;
+    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUserTenantsResponse;
+    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUserTenantsResponse;
+    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUserTenantsResponse;
+    static equals(a: ListUserTenantsResponse | PlainMessage<ListUserTenantsResponse> | undefined, b: ListUserTenantsResponse | PlainMessage<ListUserTenantsResponse> | undefined): boolean;
 }
 /**
  * @generated from message aserto.directory.store.v2.GetTenantRequest

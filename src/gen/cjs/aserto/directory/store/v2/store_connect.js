@@ -85,5 +85,41 @@ exports.Store = {
             O: store_pb_js_1.DeleteIDPConnectionResponse,
             kind: protobuf_1.MethodKind.Unary,
         },
+        /**
+         * @generated from rpc aserto.directory.store.v2.Store.ListTenantMembers
+         */
+        listTenantMembers: {
+            name: "ListTenantMembers",
+            I: store_pb_js_1.ListTenantMembersRequest,
+            O: store_pb_js_1.ListTenantMembersResponse,
+            kind: protobuf_1.MethodKind.Unary,
+        },
+        /**
+         * @generated from rpc aserto.directory.store.v2.Store.ListUserTenants
+         */
+        listUserTenants: {
+            name: "ListUserTenants",
+            I: store_pb_js_1.ListUserTenantsRequest,
+            O: store_pb_js_1.ListUserTenantsResponse,
+            kind: protobuf_1.MethodKind.Unary,
+        },
+        /**
+         * @generated from rpc aserto.directory.store.v2.Store.AssignRoleToTenant
+         */
+        assignRoleToTenant: {
+            name: "AssignRoleToTenant",
+            I: store_pb_js_1.AssignRoleToTenantRequest,
+            O: store_pb_js_1.AssignRoleToTenantResponse,
+            kind: protobuf_1.MethodKind.Unary,
+        },
+        /**
+         * @generated from rpc aserto.directory.store.v2.Store.RemoveRoleFromTenant
+         */
+        removeRoleFromTenant: {
+            name: "RemoveRoleFromTenant",
+            I: store_pb_js_1.RemoveRoleFromTenantRequest,
+            O: store_pb_js_1.RemoveRoleFromTenantResponse,
+            kind: protobuf_1.MethodKind.Unary,
+        },
     }
 };
