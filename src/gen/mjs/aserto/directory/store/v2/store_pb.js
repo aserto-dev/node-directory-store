@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { Empty, proto3, Struct, Timestamp } from "@bufbuild/protobuf";
-import { PaginationRequest, PaginationResponse } from "../../common/v2/common_pb.js";
+import { PaginationRequest, PaginationResponse } from "../../common/v3/common_pb.js";
 
 /**
  * @generated from enum aserto.directory.store.v2.Schema

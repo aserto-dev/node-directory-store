@@ -6,7 +6,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DeleteIDPConnectionResponse = exports.DeleteIDPConnectionRequest = exports.InfoResponse = exports.InfoRequest = exports.Migration = exports.MigrateSchemaResponse = exports.MigrateSchemaRequest = exports.PurgeDeletedTenantsResponse = exports.PurgeDeletedTenantsRequest = exports.ListTenantsResponse = exports.ListTenantsRequest = exports.DeleteTenantResponse = exports.DeleteTenantRequest = exports.CreateTenantResponse = exports.CreateTenantRequest = exports.GetTenantResponse = exports.GetTenantRequest = exports.ListUserTenantsResponse = exports.ListUserTenantsRequest = exports.RemoveRoleFromTenantResponse = exports.RemoveRoleFromTenantRequest = exports.AssignRoleToTenantResponse = exports.AssignRoleToTenantRequest = exports.ListTenantMembersResponse = exports.ListTenantMembersRequest = exports.Tenant = exports.TenantMember = exports.Migrate = exports.Schema = void 0;
 const protobuf_1 = require("@bufbuild/protobuf");
-const common_pb_js_1 = require("../../common/v2/common_pb.js");
+const common_pb_js_1 = require("../../common/v3/common_pb.js");
 /**
  * @generated from enum aserto.directory.store.v2.Schema
  */

@@ -1,6 +1,6 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Empty, Message, proto3, Struct, Timestamp } from "@bufbuild/protobuf";
-import { PaginationRequest, PaginationResponse } from "../../common/v2/common_pb.js";
+import { PaginationRequest, PaginationResponse } from "../../common/v3/common_pb.js";
 /**
  * @generated from enum aserto.directory.store.v2.Schema
  */
@@ -112,7 +112,7 @@ export declare class ListTenantMembersRequest extends Message<ListTenantMembersR
      */
     id: string;
     /**
-     * @generated from field: aserto.directory.common.v2.PaginationRequest page = 9;
+     * @generated from field: aserto.directory.common.v3.PaginationRequest page = 9;
      */
     page?: PaginationRequest;
     constructor(data?: PartialMessage<ListTenantMembersRequest>);
@@ -133,7 +133,7 @@ export declare class ListTenantMembersResponse extends Message<ListTenantMembers
      */
     results: TenantMember[];
     /**
-     * @generated from field: aserto.directory.common.v2.PaginationResponse page = 9;
+     * @generated from field: aserto.directory.common.v3.PaginationResponse page = 9;
      */
     page?: PaginationResponse;
     constructor(data?: PartialMessage<ListTenantMembersResponse>);
@@ -238,7 +238,7 @@ export declare class ListUserTenantsRequest extends Message<ListUserTenantsReque
      */
     id: string;
     /**
-     * @generated from field: aserto.directory.common.v2.PaginationRequest page = 9;
+     * @generated from field: aserto.directory.common.v3.PaginationRequest page = 9;
      */
     page?: PaginationRequest;
     constructor(data?: PartialMessage<ListUserTenantsRequest>);
@@ -259,7 +259,7 @@ export declare class ListUserTenantsResponse extends Message<ListUserTenantsResp
      */
     results: Tenant[];
     /**
-     * @generated from field: aserto.directory.common.v2.PaginationResponse page = 9;
+     * @generated from field: aserto.directory.common.v3.PaginationResponse page = 9;
      */
     page?: PaginationResponse;
     constructor(data?: PartialMessage<ListUserTenantsResponse>);
@@ -413,7 +413,7 @@ export declare class ListTenantsRequest extends Message<ListTenantsRequest> {
     /**
      * pagination request
      *
-     * @generated from field: aserto.directory.common.v2.PaginationRequest page = 9;
+     * @generated from field: aserto.directory.common.v3.PaginationRequest page = 9;
      */
     page?: PaginationRequest;
     constructor(data?: PartialMessage<ListTenantsRequest>);
@@ -438,7 +438,7 @@ export declare class ListTenantsResponse extends Message<ListTenantsResponse> {
     /**
      * pagination response
      *
-     * @generated from field: aserto.directory.common.v2.PaginationResponse page = 9;
+     * @generated from field: aserto.directory.common.v3.PaginationResponse page = 9;
      */
     page?: PaginationResponse;
     constructor(data?: PartialMessage<ListTenantsResponse>);
