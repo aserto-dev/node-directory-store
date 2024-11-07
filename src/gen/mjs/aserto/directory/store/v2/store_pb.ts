@@ -1271,3 +1271,432 @@ export class DeleteIDPConnectionResponse extends Message<DeleteIDPConnectionResp
   }
 }
 
+/**
+ * @generated from message aserto.directory.store.v2.ListAPIKeysRequest
+ */
+export class ListAPIKeysRequest extends Message<ListAPIKeysRequest> {
+  /**
+   * tenant id
+   *
+   * @generated from field: string tenant_id = 1;
+   */
+  tenantId = "";
+
+  /**
+   * machine account role
+   *
+   * @generated from field: string role = 2;
+   */
+  role = "";
+
+  constructor(data?: PartialMessage<ListAPIKeysRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "aserto.directory.store.v2.ListAPIKeysRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "tenant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAPIKeysRequest {
+    return new ListAPIKeysRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAPIKeysRequest {
+    return new ListAPIKeysRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAPIKeysRequest {
+    return new ListAPIKeysRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListAPIKeysRequest | PlainMessage<ListAPIKeysRequest> | undefined, b: ListAPIKeysRequest | PlainMessage<ListAPIKeysRequest> | undefined): boolean {
+    return proto3.util.equals(ListAPIKeysRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message aserto.directory.store.v2.ListAPIKeysResponse
+ */
+export class ListAPIKeysResponse extends Message<ListAPIKeysResponse> {
+  /**
+   * list of api keys
+   *
+   * @generated from field: repeated aserto.directory.store.v2.APIKey results = 1;
+   */
+  results: APIKey[] = [];
+
+  constructor(data?: PartialMessage<ListAPIKeysResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "aserto.directory.store.v2.ListAPIKeysResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "results", kind: "message", T: APIKey, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAPIKeysResponse {
+    return new ListAPIKeysResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAPIKeysResponse {
+    return new ListAPIKeysResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAPIKeysResponse {
+    return new ListAPIKeysResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListAPIKeysResponse | PlainMessage<ListAPIKeysResponse> | undefined, b: ListAPIKeysResponse | PlainMessage<ListAPIKeysResponse> | undefined): boolean {
+    return proto3.util.equals(ListAPIKeysResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message aserto.directory.store.v2.APIKey
+ */
+export class APIKey extends Message<APIKey> {
+  /**
+   * api key version
+   *
+   * @generated from field: int32 version = 1;
+   */
+  version = 0;
+
+  /**
+   * api key
+   *
+   * @generated from field: string key = 2;
+   */
+  key = "";
+
+  /**
+   * expiration date (UTC)
+   *
+   * @generated from field: google.protobuf.Timestamp expires_at = 3;
+   */
+  expiresAt?: Timestamp;
+
+  /**
+   * created at timestamp (UTC)
+   *
+   * @generated from field: google.protobuf.Timestamp created_at = 4;
+   */
+  createdAt?: Timestamp;
+
+  constructor(data?: PartialMessage<APIKey>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "aserto.directory.store.v2.APIKey";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "expires_at", kind: "message", T: Timestamp },
+    { no: 4, name: "created_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): APIKey {
+    return new APIKey().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): APIKey {
+    return new APIKey().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): APIKey {
+    return new APIKey().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: APIKey | PlainMessage<APIKey> | undefined, b: APIKey | PlainMessage<APIKey> | undefined): boolean {
+    return proto3.util.equals(APIKey, a, b);
+  }
+}
+
+/**
+ * @generated from message aserto.directory.store.v2.DeleteAPIKeyRequest
+ */
+export class DeleteAPIKeyRequest extends Message<DeleteAPIKeyRequest> {
+  /**
+   * tenant id
+   *
+   * @generated from field: string tenant_id = 1;
+   */
+  tenantId = "";
+
+  /**
+   * machine account role
+   *
+   * @generated from field: string role = 2;
+   */
+  role = "";
+
+  /**
+   * api key version
+   *
+   * @generated from field: int32 version = 3;
+   */
+  version = 0;
+
+  constructor(data?: PartialMessage<DeleteAPIKeyRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "aserto.directory.store.v2.DeleteAPIKeyRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "tenant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteAPIKeyRequest {
+    return new DeleteAPIKeyRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteAPIKeyRequest {
+    return new DeleteAPIKeyRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteAPIKeyRequest {
+    return new DeleteAPIKeyRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteAPIKeyRequest | PlainMessage<DeleteAPIKeyRequest> | undefined, b: DeleteAPIKeyRequest | PlainMessage<DeleteAPIKeyRequest> | undefined): boolean {
+    return proto3.util.equals(DeleteAPIKeyRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message aserto.directory.store.v2.DeleteAPIKeyResponse
+ */
+export class DeleteAPIKeyResponse extends Message<DeleteAPIKeyResponse> {
+  /**
+   * @generated from field: google.protobuf.Empty result = 1;
+   */
+  result?: Empty;
+
+  constructor(data?: PartialMessage<DeleteAPIKeyResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "aserto.directory.store.v2.DeleteAPIKeyResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "result", kind: "message", T: Empty },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteAPIKeyResponse {
+    return new DeleteAPIKeyResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteAPIKeyResponse {
+    return new DeleteAPIKeyResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteAPIKeyResponse {
+    return new DeleteAPIKeyResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteAPIKeyResponse | PlainMessage<DeleteAPIKeyResponse> | undefined, b: DeleteAPIKeyResponse | PlainMessage<DeleteAPIKeyResponse> | undefined): boolean {
+    return proto3.util.equals(DeleteAPIKeyResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message aserto.directory.store.v2.CreateAPIKeyRequest
+ */
+export class CreateAPIKeyRequest extends Message<CreateAPIKeyRequest> {
+  /**
+   * tenant id
+   *
+   * @generated from field: string tenant_id = 1;
+   */
+  tenantId = "";
+
+  /**
+   * machine account role
+   *
+   * @generated from field: string role = 2;
+   */
+  role = "";
+
+  /**
+   * expiration date (UTC)
+   *
+   * @generated from field: google.protobuf.Timestamp expires_at = 3;
+   */
+  expiresAt?: Timestamp;
+
+  constructor(data?: PartialMessage<CreateAPIKeyRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "aserto.directory.store.v2.CreateAPIKeyRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "tenant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "expires_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateAPIKeyRequest {
+    return new CreateAPIKeyRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateAPIKeyRequest {
+    return new CreateAPIKeyRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateAPIKeyRequest {
+    return new CreateAPIKeyRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateAPIKeyRequest | PlainMessage<CreateAPIKeyRequest> | undefined, b: CreateAPIKeyRequest | PlainMessage<CreateAPIKeyRequest> | undefined): boolean {
+    return proto3.util.equals(CreateAPIKeyRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message aserto.directory.store.v2.CreateAPIKeyResponse
+ */
+export class CreateAPIKeyResponse extends Message<CreateAPIKeyResponse> {
+  /**
+   * api key
+   *
+   * @generated from field: aserto.directory.store.v2.APIKey result = 1;
+   */
+  result?: APIKey;
+
+  constructor(data?: PartialMessage<CreateAPIKeyResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "aserto.directory.store.v2.CreateAPIKeyResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "result", kind: "message", T: APIKey },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateAPIKeyResponse {
+    return new CreateAPIKeyResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateAPIKeyResponse {
+    return new CreateAPIKeyResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateAPIKeyResponse {
+    return new CreateAPIKeyResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateAPIKeyResponse | PlainMessage<CreateAPIKeyResponse> | undefined, b: CreateAPIKeyResponse | PlainMessage<CreateAPIKeyResponse> | undefined): boolean {
+    return proto3.util.equals(CreateAPIKeyResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message aserto.directory.store.v2.GetAPIKeyIdentityRequest
+ */
+export class GetAPIKeyIdentityRequest extends Message<GetAPIKeyIdentityRequest> {
+  /**
+   * tenant id
+   *
+   * @generated from field: string tenant_id = 1;
+   */
+  tenantId = "";
+
+  /**
+   * api key
+   *
+   * @generated from field: string key = 2;
+   */
+  key = "";
+
+  constructor(data?: PartialMessage<GetAPIKeyIdentityRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "aserto.directory.store.v2.GetAPIKeyIdentityRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "tenant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAPIKeyIdentityRequest {
+    return new GetAPIKeyIdentityRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAPIKeyIdentityRequest {
+    return new GetAPIKeyIdentityRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAPIKeyIdentityRequest {
+    return new GetAPIKeyIdentityRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetAPIKeyIdentityRequest | PlainMessage<GetAPIKeyIdentityRequest> | undefined, b: GetAPIKeyIdentityRequest | PlainMessage<GetAPIKeyIdentityRequest> | undefined): boolean {
+    return proto3.util.equals(GetAPIKeyIdentityRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message aserto.directory.store.v2.GetAPIKeyIdentityResponse
+ */
+export class GetAPIKeyIdentityResponse extends Message<GetAPIKeyIdentityResponse> {
+  /**
+   * machine account identity
+   *
+   * @generated from field: string identity = 1;
+   */
+  identity = "";
+
+  /**
+   * expiration date (UTC)
+   *
+   * @generated from field: google.protobuf.Timestamp expires_at = 2;
+   */
+  expiresAt?: Timestamp;
+
+  constructor(data?: PartialMessage<GetAPIKeyIdentityResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "aserto.directory.store.v2.GetAPIKeyIdentityResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "identity", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "expires_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAPIKeyIdentityResponse {
+    return new GetAPIKeyIdentityResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAPIKeyIdentityResponse {
+    return new GetAPIKeyIdentityResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAPIKeyIdentityResponse {
+    return new GetAPIKeyIdentityResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetAPIKeyIdentityResponse | PlainMessage<GetAPIKeyIdentityResponse> | undefined, b: GetAPIKeyIdentityResponse | PlainMessage<GetAPIKeyIdentityResponse> | undefined): boolean {
+    return proto3.util.equals(GetAPIKeyIdentityResponse, a, b);
+  }
+}
+

@@ -324,3 +324,103 @@ export const DeleteIDPConnectionResponse = /*@__PURE__*/ proto3.makeMessageType(
   ],
 );
 
+/**
+ * @generated from message aserto.directory.store.v2.ListAPIKeysRequest
+ */
+export const ListAPIKeysRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "aserto.directory.store.v2.ListAPIKeysRequest",
+  () => [
+    { no: 1, name: "tenant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message aserto.directory.store.v2.ListAPIKeysResponse
+ */
+export const ListAPIKeysResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "aserto.directory.store.v2.ListAPIKeysResponse",
+  () => [
+    { no: 1, name: "results", kind: "message", T: APIKey, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message aserto.directory.store.v2.APIKey
+ */
+export const APIKey = /*@__PURE__*/ proto3.makeMessageType(
+  "aserto.directory.store.v2.APIKey",
+  () => [
+    { no: 1, name: "version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "expires_at", kind: "message", T: Timestamp },
+    { no: 4, name: "created_at", kind: "message", T: Timestamp },
+  ],
+);
+
+/**
+ * @generated from message aserto.directory.store.v2.DeleteAPIKeyRequest
+ */
+export const DeleteAPIKeyRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "aserto.directory.store.v2.DeleteAPIKeyRequest",
+  () => [
+    { no: 1, name: "tenant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message aserto.directory.store.v2.DeleteAPIKeyResponse
+ */
+export const DeleteAPIKeyResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "aserto.directory.store.v2.DeleteAPIKeyResponse",
+  () => [
+    { no: 1, name: "result", kind: "message", T: Empty },
+  ],
+);
+
+/**
+ * @generated from message aserto.directory.store.v2.CreateAPIKeyRequest
+ */
+export const CreateAPIKeyRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "aserto.directory.store.v2.CreateAPIKeyRequest",
+  () => [
+    { no: 1, name: "tenant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "expires_at", kind: "message", T: Timestamp },
+  ],
+);
+
+/**
+ * @generated from message aserto.directory.store.v2.CreateAPIKeyResponse
+ */
+export const CreateAPIKeyResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "aserto.directory.store.v2.CreateAPIKeyResponse",
+  () => [
+    { no: 1, name: "result", kind: "message", T: APIKey },
+  ],
+);
+
+/**
+ * @generated from message aserto.directory.store.v2.GetAPIKeyIdentityRequest
+ */
+export const GetAPIKeyIdentityRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "aserto.directory.store.v2.GetAPIKeyIdentityRequest",
+  () => [
+    { no: 1, name: "tenant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message aserto.directory.store.v2.GetAPIKeyIdentityResponse
+ */
+export const GetAPIKeyIdentityResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "aserto.directory.store.v2.GetAPIKeyIdentityResponse",
+  () => [
+    { no: 1, name: "identity", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "expires_at", kind: "message", T: Timestamp },
+  ],
+);
+

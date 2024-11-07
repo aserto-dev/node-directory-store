@@ -4,7 +4,7 @@
 /* eslint-disable */
 // @ts-nocheck
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteIDPConnectionResponse = exports.DeleteIDPConnectionRequest = exports.InfoResponse = exports.InfoRequest = exports.Migration = exports.MigrateSchemaResponse = exports.MigrateSchemaRequest = exports.PurgeDeletedTenantsResponse = exports.PurgeDeletedTenantsRequest = exports.ListTenantsResponse = exports.ListTenantsRequest = exports.DeleteTenantResponse = exports.DeleteTenantRequest = exports.CreateTenantResponse = exports.CreateTenantRequest = exports.GetTenantResponse = exports.GetTenantRequest = exports.ListUserTenantsResponse = exports.ListUserTenantsRequest = exports.RemoveRoleFromTenantResponse = exports.RemoveRoleFromTenantRequest = exports.AssignRoleToTenantResponse = exports.AssignRoleToTenantRequest = exports.ListTenantMembersResponse = exports.ListTenantMembersRequest = exports.Tenant = exports.TenantMember = exports.Migrate = exports.Schema = void 0;
+exports.GetAPIKeyIdentityResponse = exports.GetAPIKeyIdentityRequest = exports.CreateAPIKeyResponse = exports.CreateAPIKeyRequest = exports.DeleteAPIKeyResponse = exports.DeleteAPIKeyRequest = exports.APIKey = exports.ListAPIKeysResponse = exports.ListAPIKeysRequest = exports.DeleteIDPConnectionResponse = exports.DeleteIDPConnectionRequest = exports.InfoResponse = exports.InfoRequest = exports.Migration = exports.MigrateSchemaResponse = exports.MigrateSchemaRequest = exports.PurgeDeletedTenantsResponse = exports.PurgeDeletedTenantsRequest = exports.ListTenantsResponse = exports.ListTenantsRequest = exports.DeleteTenantResponse = exports.DeleteTenantRequest = exports.CreateTenantResponse = exports.CreateTenantRequest = exports.GetTenantResponse = exports.GetTenantRequest = exports.ListUserTenantsResponse = exports.ListUserTenantsRequest = exports.RemoveRoleFromTenantResponse = exports.RemoveRoleFromTenantRequest = exports.AssignRoleToTenantResponse = exports.AssignRoleToTenantRequest = exports.ListTenantMembersResponse = exports.ListTenantMembersRequest = exports.Tenant = exports.TenantMember = exports.Migrate = exports.Schema = void 0;
 const protobuf_1 = require("@bufbuild/protobuf");
 const common_pb_js_1 = require("../../common/v3/common_pb.js");
 /**
@@ -961,4 +961,335 @@ DeleteIDPConnectionResponse.runtime = protobuf_1.proto3;
 DeleteIDPConnectionResponse.typeName = "aserto.directory.store.v2.DeleteIDPConnectionResponse";
 DeleteIDPConnectionResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
     { no: 1, name: "result", kind: "message", T: protobuf_1.Empty },
+]);
+/**
+ * @generated from message aserto.directory.store.v2.ListAPIKeysRequest
+ */
+class ListAPIKeysRequest extends protobuf_1.Message {
+    constructor(data) {
+        super();
+        /**
+         * tenant id
+         *
+         * @generated from field: string tenant_id = 1;
+         */
+        this.tenantId = "";
+        /**
+         * machine account role
+         *
+         * @generated from field: string role = 2;
+         */
+        this.role = "";
+        protobuf_1.proto3.util.initPartial(data, this);
+    }
+    static fromBinary(bytes, options) {
+        return new ListAPIKeysRequest().fromBinary(bytes, options);
+    }
+    static fromJson(jsonValue, options) {
+        return new ListAPIKeysRequest().fromJson(jsonValue, options);
+    }
+    static fromJsonString(jsonString, options) {
+        return new ListAPIKeysRequest().fromJsonString(jsonString, options);
+    }
+    static equals(a, b) {
+        return protobuf_1.proto3.util.equals(ListAPIKeysRequest, a, b);
+    }
+}
+exports.ListAPIKeysRequest = ListAPIKeysRequest;
+ListAPIKeysRequest.runtime = protobuf_1.proto3;
+ListAPIKeysRequest.typeName = "aserto.directory.store.v2.ListAPIKeysRequest";
+ListAPIKeysRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
+    { no: 1, name: "tenant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+]);
+/**
+ * @generated from message aserto.directory.store.v2.ListAPIKeysResponse
+ */
+class ListAPIKeysResponse extends protobuf_1.Message {
+    constructor(data) {
+        super();
+        /**
+         * list of api keys
+         *
+         * @generated from field: repeated aserto.directory.store.v2.APIKey results = 1;
+         */
+        this.results = [];
+        protobuf_1.proto3.util.initPartial(data, this);
+    }
+    static fromBinary(bytes, options) {
+        return new ListAPIKeysResponse().fromBinary(bytes, options);
+    }
+    static fromJson(jsonValue, options) {
+        return new ListAPIKeysResponse().fromJson(jsonValue, options);
+    }
+    static fromJsonString(jsonString, options) {
+        return new ListAPIKeysResponse().fromJsonString(jsonString, options);
+    }
+    static equals(a, b) {
+        return protobuf_1.proto3.util.equals(ListAPIKeysResponse, a, b);
+    }
+}
+exports.ListAPIKeysResponse = ListAPIKeysResponse;
+ListAPIKeysResponse.runtime = protobuf_1.proto3;
+ListAPIKeysResponse.typeName = "aserto.directory.store.v2.ListAPIKeysResponse";
+ListAPIKeysResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
+    { no: 1, name: "results", kind: "message", T: APIKey, repeated: true },
+]);
+/**
+ * @generated from message aserto.directory.store.v2.APIKey
+ */
+class APIKey extends protobuf_1.Message {
+    constructor(data) {
+        super();
+        /**
+         * api key version
+         *
+         * @generated from field: int32 version = 1;
+         */
+        this.version = 0;
+        /**
+         * api key
+         *
+         * @generated from field: string key = 2;
+         */
+        this.key = "";
+        protobuf_1.proto3.util.initPartial(data, this);
+    }
+    static fromBinary(bytes, options) {
+        return new APIKey().fromBinary(bytes, options);
+    }
+    static fromJson(jsonValue, options) {
+        return new APIKey().fromJson(jsonValue, options);
+    }
+    static fromJsonString(jsonString, options) {
+        return new APIKey().fromJsonString(jsonString, options);
+    }
+    static equals(a, b) {
+        return protobuf_1.proto3.util.equals(APIKey, a, b);
+    }
+}
+exports.APIKey = APIKey;
+APIKey.runtime = protobuf_1.proto3;
+APIKey.typeName = "aserto.directory.store.v2.APIKey";
+APIKey.fields = protobuf_1.proto3.util.newFieldList(() => [
+    { no: 1, name: "version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "expires_at", kind: "message", T: protobuf_1.Timestamp },
+    { no: 4, name: "created_at", kind: "message", T: protobuf_1.Timestamp },
+]);
+/**
+ * @generated from message aserto.directory.store.v2.DeleteAPIKeyRequest
+ */
+class DeleteAPIKeyRequest extends protobuf_1.Message {
+    constructor(data) {
+        super();
+        /**
+         * tenant id
+         *
+         * @generated from field: string tenant_id = 1;
+         */
+        this.tenantId = "";
+        /**
+         * machine account role
+         *
+         * @generated from field: string role = 2;
+         */
+        this.role = "";
+        /**
+         * api key version
+         *
+         * @generated from field: int32 version = 3;
+         */
+        this.version = 0;
+        protobuf_1.proto3.util.initPartial(data, this);
+    }
+    static fromBinary(bytes, options) {
+        return new DeleteAPIKeyRequest().fromBinary(bytes, options);
+    }
+    static fromJson(jsonValue, options) {
+        return new DeleteAPIKeyRequest().fromJson(jsonValue, options);
+    }
+    static fromJsonString(jsonString, options) {
+        return new DeleteAPIKeyRequest().fromJsonString(jsonString, options);
+    }
+    static equals(a, b) {
+        return protobuf_1.proto3.util.equals(DeleteAPIKeyRequest, a, b);
+    }
+}
+exports.DeleteAPIKeyRequest = DeleteAPIKeyRequest;
+DeleteAPIKeyRequest.runtime = protobuf_1.proto3;
+DeleteAPIKeyRequest.typeName = "aserto.directory.store.v2.DeleteAPIKeyRequest";
+DeleteAPIKeyRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
+    { no: 1, name: "tenant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+]);
+/**
+ * @generated from message aserto.directory.store.v2.DeleteAPIKeyResponse
+ */
+class DeleteAPIKeyResponse extends protobuf_1.Message {
+    constructor(data) {
+        super();
+        protobuf_1.proto3.util.initPartial(data, this);
+    }
+    static fromBinary(bytes, options) {
+        return new DeleteAPIKeyResponse().fromBinary(bytes, options);
+    }
+    static fromJson(jsonValue, options) {
+        return new DeleteAPIKeyResponse().fromJson(jsonValue, options);
+    }
+    static fromJsonString(jsonString, options) {
+        return new DeleteAPIKeyResponse().fromJsonString(jsonString, options);
+    }
+    static equals(a, b) {
+        return protobuf_1.proto3.util.equals(DeleteAPIKeyResponse, a, b);
+    }
+}
+exports.DeleteAPIKeyResponse = DeleteAPIKeyResponse;
+DeleteAPIKeyResponse.runtime = protobuf_1.proto3;
+DeleteAPIKeyResponse.typeName = "aserto.directory.store.v2.DeleteAPIKeyResponse";
+DeleteAPIKeyResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
+    { no: 1, name: "result", kind: "message", T: protobuf_1.Empty },
+]);
+/**
+ * @generated from message aserto.directory.store.v2.CreateAPIKeyRequest
+ */
+class CreateAPIKeyRequest extends protobuf_1.Message {
+    constructor(data) {
+        super();
+        /**
+         * tenant id
+         *
+         * @generated from field: string tenant_id = 1;
+         */
+        this.tenantId = "";
+        /**
+         * machine account role
+         *
+         * @generated from field: string role = 2;
+         */
+        this.role = "";
+        protobuf_1.proto3.util.initPartial(data, this);
+    }
+    static fromBinary(bytes, options) {
+        return new CreateAPIKeyRequest().fromBinary(bytes, options);
+    }
+    static fromJson(jsonValue, options) {
+        return new CreateAPIKeyRequest().fromJson(jsonValue, options);
+    }
+    static fromJsonString(jsonString, options) {
+        return new CreateAPIKeyRequest().fromJsonString(jsonString, options);
+    }
+    static equals(a, b) {
+        return protobuf_1.proto3.util.equals(CreateAPIKeyRequest, a, b);
+    }
+}
+exports.CreateAPIKeyRequest = CreateAPIKeyRequest;
+CreateAPIKeyRequest.runtime = protobuf_1.proto3;
+CreateAPIKeyRequest.typeName = "aserto.directory.store.v2.CreateAPIKeyRequest";
+CreateAPIKeyRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
+    { no: 1, name: "tenant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "expires_at", kind: "message", T: protobuf_1.Timestamp },
+]);
+/**
+ * @generated from message aserto.directory.store.v2.CreateAPIKeyResponse
+ */
+class CreateAPIKeyResponse extends protobuf_1.Message {
+    constructor(data) {
+        super();
+        protobuf_1.proto3.util.initPartial(data, this);
+    }
+    static fromBinary(bytes, options) {
+        return new CreateAPIKeyResponse().fromBinary(bytes, options);
+    }
+    static fromJson(jsonValue, options) {
+        return new CreateAPIKeyResponse().fromJson(jsonValue, options);
+    }
+    static fromJsonString(jsonString, options) {
+        return new CreateAPIKeyResponse().fromJsonString(jsonString, options);
+    }
+    static equals(a, b) {
+        return protobuf_1.proto3.util.equals(CreateAPIKeyResponse, a, b);
+    }
+}
+exports.CreateAPIKeyResponse = CreateAPIKeyResponse;
+CreateAPIKeyResponse.runtime = protobuf_1.proto3;
+CreateAPIKeyResponse.typeName = "aserto.directory.store.v2.CreateAPIKeyResponse";
+CreateAPIKeyResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
+    { no: 1, name: "result", kind: "message", T: APIKey },
+]);
+/**
+ * @generated from message aserto.directory.store.v2.GetAPIKeyIdentityRequest
+ */
+class GetAPIKeyIdentityRequest extends protobuf_1.Message {
+    constructor(data) {
+        super();
+        /**
+         * tenant id
+         *
+         * @generated from field: string tenant_id = 1;
+         */
+        this.tenantId = "";
+        /**
+         * api key
+         *
+         * @generated from field: string key = 2;
+         */
+        this.key = "";
+        protobuf_1.proto3.util.initPartial(data, this);
+    }
+    static fromBinary(bytes, options) {
+        return new GetAPIKeyIdentityRequest().fromBinary(bytes, options);
+    }
+    static fromJson(jsonValue, options) {
+        return new GetAPIKeyIdentityRequest().fromJson(jsonValue, options);
+    }
+    static fromJsonString(jsonString, options) {
+        return new GetAPIKeyIdentityRequest().fromJsonString(jsonString, options);
+    }
+    static equals(a, b) {
+        return protobuf_1.proto3.util.equals(GetAPIKeyIdentityRequest, a, b);
+    }
+}
+exports.GetAPIKeyIdentityRequest = GetAPIKeyIdentityRequest;
+GetAPIKeyIdentityRequest.runtime = protobuf_1.proto3;
+GetAPIKeyIdentityRequest.typeName = "aserto.directory.store.v2.GetAPIKeyIdentityRequest";
+GetAPIKeyIdentityRequest.fields = protobuf_1.proto3.util.newFieldList(() => [
+    { no: 1, name: "tenant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+]);
+/**
+ * @generated from message aserto.directory.store.v2.GetAPIKeyIdentityResponse
+ */
+class GetAPIKeyIdentityResponse extends protobuf_1.Message {
+    constructor(data) {
+        super();
+        /**
+         * machine account identity
+         *
+         * @generated from field: string identity = 1;
+         */
+        this.identity = "";
+        protobuf_1.proto3.util.initPartial(data, this);
+    }
+    static fromBinary(bytes, options) {
+        return new GetAPIKeyIdentityResponse().fromBinary(bytes, options);
+    }
+    static fromJson(jsonValue, options) {
+        return new GetAPIKeyIdentityResponse().fromJson(jsonValue, options);
+    }
+    static fromJsonString(jsonString, options) {
+        return new GetAPIKeyIdentityResponse().fromJsonString(jsonString, options);
+    }
+    static equals(a, b) {
+        return protobuf_1.proto3.util.equals(GetAPIKeyIdentityResponse, a, b);
+    }
+}
+exports.GetAPIKeyIdentityResponse = GetAPIKeyIdentityResponse;
+GetAPIKeyIdentityResponse.runtime = protobuf_1.proto3;
+GetAPIKeyIdentityResponse.typeName = "aserto.directory.store.v2.GetAPIKeyIdentityResponse";
+GetAPIKeyIdentityResponse.fields = protobuf_1.proto3.util.newFieldList(() => [
+    { no: 1, name: "identity", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "expires_at", kind: "message", T: protobuf_1.Timestamp },
 ]);

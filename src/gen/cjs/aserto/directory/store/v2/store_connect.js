@@ -121,5 +121,41 @@ exports.Store = {
             O: store_pb_js_1.RemoveRoleFromTenantResponse,
             kind: protobuf_1.MethodKind.Unary,
         },
+        /**
+         * @generated from rpc aserto.directory.store.v2.Store.ListAPIKeys
+         */
+        listAPIKeys: {
+            name: "ListAPIKeys",
+            I: store_pb_js_1.ListAPIKeysRequest,
+            O: store_pb_js_1.ListAPIKeysResponse,
+            kind: protobuf_1.MethodKind.Unary,
+        },
+        /**
+         * @generated from rpc aserto.directory.store.v2.Store.DeleteAPIKey
+         */
+        deleteAPIKey: {
+            name: "DeleteAPIKey",
+            I: store_pb_js_1.DeleteAPIKeyRequest,
+            O: store_pb_js_1.DeleteAPIKeyResponse,
+            kind: protobuf_1.MethodKind.Unary,
+        },
+        /**
+         * @generated from rpc aserto.directory.store.v2.Store.CreateAPIKey
+         */
+        createAPIKey: {
+            name: "CreateAPIKey",
+            I: store_pb_js_1.CreateAPIKeyRequest,
+            O: store_pb_js_1.CreateAPIKeyResponse,
+            kind: protobuf_1.MethodKind.Unary,
+        },
+        /**
+         * @generated from rpc aserto.directory.store.v2.Store.GetAPIKeyIdentity
+         */
+        getAPIKeyIdentity: {
+            name: "GetAPIKeyIdentity",
+            I: store_pb_js_1.GetAPIKeyIdentityRequest,
+            O: store_pb_js_1.GetAPIKeyIdentityResponse,
+            kind: protobuf_1.MethodKind.Unary,
+        },
     }
 };

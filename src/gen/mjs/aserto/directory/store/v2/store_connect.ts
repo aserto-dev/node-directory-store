@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AssignRoleToTenantRequest, AssignRoleToTenantResponse, CreateTenantRequest, CreateTenantResponse, DeleteIDPConnectionRequest, DeleteIDPConnectionResponse, DeleteTenantRequest, DeleteTenantResponse, GetTenantRequest, GetTenantResponse, InfoRequest, InfoResponse, ListTenantMembersRequest, ListTenantMembersResponse, ListTenantsRequest, ListTenantsResponse, ListUserTenantsRequest, ListUserTenantsResponse, MigrateSchemaRequest, MigrateSchemaResponse, PurgeDeletedTenantsRequest, PurgeDeletedTenantsResponse, RemoveRoleFromTenantRequest, RemoveRoleFromTenantResponse } from "./store_pb.js";
+import { AssignRoleToTenantRequest, AssignRoleToTenantResponse, CreateAPIKeyRequest, CreateAPIKeyResponse, CreateTenantRequest, CreateTenantResponse, DeleteAPIKeyRequest, DeleteAPIKeyResponse, DeleteIDPConnectionRequest, DeleteIDPConnectionResponse, DeleteTenantRequest, DeleteTenantResponse, GetAPIKeyIdentityRequest, GetAPIKeyIdentityResponse, GetTenantRequest, GetTenantResponse, InfoRequest, InfoResponse, ListAPIKeysRequest, ListAPIKeysResponse, ListTenantMembersRequest, ListTenantMembersResponse, ListTenantsRequest, ListTenantsResponse, ListUserTenantsRequest, ListUserTenantsResponse, MigrateSchemaRequest, MigrateSchemaResponse, PurgeDeletedTenantsRequest, PurgeDeletedTenantsResponse, RemoveRoleFromTenantRequest, RemoveRoleFromTenantResponse } from "./store_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -118,6 +118,42 @@ export const Store = {
       name: "RemoveRoleFromTenant",
       I: RemoveRoleFromTenantRequest,
       O: RemoveRoleFromTenantResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.ListAPIKeys
+     */
+    listAPIKeys: {
+      name: "ListAPIKeys",
+      I: ListAPIKeysRequest,
+      O: ListAPIKeysResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.DeleteAPIKey
+     */
+    deleteAPIKey: {
+      name: "DeleteAPIKey",
+      I: DeleteAPIKeyRequest,
+      O: DeleteAPIKeyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.CreateAPIKey
+     */
+    createAPIKey: {
+      name: "CreateAPIKey",
+      I: CreateAPIKeyRequest,
+      O: CreateAPIKeyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.GetAPIKeyIdentity
+     */
+    getAPIKeyIdentity: {
+      name: "GetAPIKeyIdentity",
+      I: GetAPIKeyIdentityRequest,
+      O: GetAPIKeyIdentityResponse,
       kind: MethodKind.Unary,
     },
   }

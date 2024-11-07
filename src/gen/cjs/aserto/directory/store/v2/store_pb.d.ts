@@ -663,3 +663,232 @@ export declare class DeleteIDPConnectionResponse extends Message<DeleteIDPConnec
     static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteIDPConnectionResponse;
     static equals(a: DeleteIDPConnectionResponse | PlainMessage<DeleteIDPConnectionResponse> | undefined, b: DeleteIDPConnectionResponse | PlainMessage<DeleteIDPConnectionResponse> | undefined): boolean;
 }
+/**
+ * @generated from message aserto.directory.store.v2.ListAPIKeysRequest
+ */
+export declare class ListAPIKeysRequest extends Message<ListAPIKeysRequest> {
+    /**
+     * tenant id
+     *
+     * @generated from field: string tenant_id = 1;
+     */
+    tenantId: string;
+    /**
+     * machine account role
+     *
+     * @generated from field: string role = 2;
+     */
+    role: string;
+    constructor(data?: PartialMessage<ListAPIKeysRequest>);
+    static readonly runtime: typeof proto3;
+    static readonly typeName = "aserto.directory.store.v2.ListAPIKeysRequest";
+    static readonly fields: FieldList;
+    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAPIKeysRequest;
+    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAPIKeysRequest;
+    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAPIKeysRequest;
+    static equals(a: ListAPIKeysRequest | PlainMessage<ListAPIKeysRequest> | undefined, b: ListAPIKeysRequest | PlainMessage<ListAPIKeysRequest> | undefined): boolean;
+}
+/**
+ * @generated from message aserto.directory.store.v2.ListAPIKeysResponse
+ */
+export declare class ListAPIKeysResponse extends Message<ListAPIKeysResponse> {
+    /**
+     * list of api keys
+     *
+     * @generated from field: repeated aserto.directory.store.v2.APIKey results = 1;
+     */
+    results: APIKey[];
+    constructor(data?: PartialMessage<ListAPIKeysResponse>);
+    static readonly runtime: typeof proto3;
+    static readonly typeName = "aserto.directory.store.v2.ListAPIKeysResponse";
+    static readonly fields: FieldList;
+    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAPIKeysResponse;
+    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAPIKeysResponse;
+    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAPIKeysResponse;
+    static equals(a: ListAPIKeysResponse | PlainMessage<ListAPIKeysResponse> | undefined, b: ListAPIKeysResponse | PlainMessage<ListAPIKeysResponse> | undefined): boolean;
+}
+/**
+ * @generated from message aserto.directory.store.v2.APIKey
+ */
+export declare class APIKey extends Message<APIKey> {
+    /**
+     * api key version
+     *
+     * @generated from field: int32 version = 1;
+     */
+    version: number;
+    /**
+     * api key
+     *
+     * @generated from field: string key = 2;
+     */
+    key: string;
+    /**
+     * expiration date (UTC)
+     *
+     * @generated from field: google.protobuf.Timestamp expires_at = 3;
+     */
+    expiresAt?: Timestamp;
+    /**
+     * created at timestamp (UTC)
+     *
+     * @generated from field: google.protobuf.Timestamp created_at = 4;
+     */
+    createdAt?: Timestamp;
+    constructor(data?: PartialMessage<APIKey>);
+    static readonly runtime: typeof proto3;
+    static readonly typeName = "aserto.directory.store.v2.APIKey";
+    static readonly fields: FieldList;
+    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): APIKey;
+    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): APIKey;
+    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): APIKey;
+    static equals(a: APIKey | PlainMessage<APIKey> | undefined, b: APIKey | PlainMessage<APIKey> | undefined): boolean;
+}
+/**
+ * @generated from message aserto.directory.store.v2.DeleteAPIKeyRequest
+ */
+export declare class DeleteAPIKeyRequest extends Message<DeleteAPIKeyRequest> {
+    /**
+     * tenant id
+     *
+     * @generated from field: string tenant_id = 1;
+     */
+    tenantId: string;
+    /**
+     * machine account role
+     *
+     * @generated from field: string role = 2;
+     */
+    role: string;
+    /**
+     * api key version
+     *
+     * @generated from field: int32 version = 3;
+     */
+    version: number;
+    constructor(data?: PartialMessage<DeleteAPIKeyRequest>);
+    static readonly runtime: typeof proto3;
+    static readonly typeName = "aserto.directory.store.v2.DeleteAPIKeyRequest";
+    static readonly fields: FieldList;
+    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteAPIKeyRequest;
+    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteAPIKeyRequest;
+    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteAPIKeyRequest;
+    static equals(a: DeleteAPIKeyRequest | PlainMessage<DeleteAPIKeyRequest> | undefined, b: DeleteAPIKeyRequest | PlainMessage<DeleteAPIKeyRequest> | undefined): boolean;
+}
+/**
+ * @generated from message aserto.directory.store.v2.DeleteAPIKeyResponse
+ */
+export declare class DeleteAPIKeyResponse extends Message<DeleteAPIKeyResponse> {
+    /**
+     * @generated from field: google.protobuf.Empty result = 1;
+     */
+    result?: Empty;
+    constructor(data?: PartialMessage<DeleteAPIKeyResponse>);
+    static readonly runtime: typeof proto3;
+    static readonly typeName = "aserto.directory.store.v2.DeleteAPIKeyResponse";
+    static readonly fields: FieldList;
+    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteAPIKeyResponse;
+    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteAPIKeyResponse;
+    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteAPIKeyResponse;
+    static equals(a: DeleteAPIKeyResponse | PlainMessage<DeleteAPIKeyResponse> | undefined, b: DeleteAPIKeyResponse | PlainMessage<DeleteAPIKeyResponse> | undefined): boolean;
+}
+/**
+ * @generated from message aserto.directory.store.v2.CreateAPIKeyRequest
+ */
+export declare class CreateAPIKeyRequest extends Message<CreateAPIKeyRequest> {
+    /**
+     * tenant id
+     *
+     * @generated from field: string tenant_id = 1;
+     */
+    tenantId: string;
+    /**
+     * machine account role
+     *
+     * @generated from field: string role = 2;
+     */
+    role: string;
+    /**
+     * expiration date (UTC)
+     *
+     * @generated from field: google.protobuf.Timestamp expires_at = 3;
+     */
+    expiresAt?: Timestamp;
+    constructor(data?: PartialMessage<CreateAPIKeyRequest>);
+    static readonly runtime: typeof proto3;
+    static readonly typeName = "aserto.directory.store.v2.CreateAPIKeyRequest";
+    static readonly fields: FieldList;
+    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateAPIKeyRequest;
+    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateAPIKeyRequest;
+    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateAPIKeyRequest;
+    static equals(a: CreateAPIKeyRequest | PlainMessage<CreateAPIKeyRequest> | undefined, b: CreateAPIKeyRequest | PlainMessage<CreateAPIKeyRequest> | undefined): boolean;
+}
+/**
+ * @generated from message aserto.directory.store.v2.CreateAPIKeyResponse
+ */
+export declare class CreateAPIKeyResponse extends Message<CreateAPIKeyResponse> {
+    /**
+     * api key
+     *
+     * @generated from field: aserto.directory.store.v2.APIKey result = 1;
+     */
+    result?: APIKey;
+    constructor(data?: PartialMessage<CreateAPIKeyResponse>);
+    static readonly runtime: typeof proto3;
+    static readonly typeName = "aserto.directory.store.v2.CreateAPIKeyResponse";
+    static readonly fields: FieldList;
+    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateAPIKeyResponse;
+    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateAPIKeyResponse;
+    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateAPIKeyResponse;
+    static equals(a: CreateAPIKeyResponse | PlainMessage<CreateAPIKeyResponse> | undefined, b: CreateAPIKeyResponse | PlainMessage<CreateAPIKeyResponse> | undefined): boolean;
+}
+/**
+ * @generated from message aserto.directory.store.v2.GetAPIKeyIdentityRequest
+ */
+export declare class GetAPIKeyIdentityRequest extends Message<GetAPIKeyIdentityRequest> {
+    /**
+     * tenant id
+     *
+     * @generated from field: string tenant_id = 1;
+     */
+    tenantId: string;
+    /**
+     * api key
+     *
+     * @generated from field: string key = 2;
+     */
+    key: string;
+    constructor(data?: PartialMessage<GetAPIKeyIdentityRequest>);
+    static readonly runtime: typeof proto3;
+    static readonly typeName = "aserto.directory.store.v2.GetAPIKeyIdentityRequest";
+    static readonly fields: FieldList;
+    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAPIKeyIdentityRequest;
+    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAPIKeyIdentityRequest;
+    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAPIKeyIdentityRequest;
+    static equals(a: GetAPIKeyIdentityRequest | PlainMessage<GetAPIKeyIdentityRequest> | undefined, b: GetAPIKeyIdentityRequest | PlainMessage<GetAPIKeyIdentityRequest> | undefined): boolean;
+}
+/**
+ * @generated from message aserto.directory.store.v2.GetAPIKeyIdentityResponse
+ */
+export declare class GetAPIKeyIdentityResponse extends Message<GetAPIKeyIdentityResponse> {
+    /**
+     * machine account identity
+     *
+     * @generated from field: string identity = 1;
+     */
+    identity: string;
+    /**
+     * expiration date (UTC)
+     *
+     * @generated from field: google.protobuf.Timestamp expires_at = 2;
+     */
+    expiresAt?: Timestamp;
+    constructor(data?: PartialMessage<GetAPIKeyIdentityResponse>);
+    static readonly runtime: typeof proto3;
+    static readonly typeName = "aserto.directory.store.v2.GetAPIKeyIdentityResponse";
+    static readonly fields: FieldList;
+    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAPIKeyIdentityResponse;
+    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAPIKeyIdentityResponse;
+    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAPIKeyIdentityResponse;
+    static equals(a: GetAPIKeyIdentityResponse | PlainMessage<GetAPIKeyIdentityResponse> | undefined, b: GetAPIKeyIdentityResponse | PlainMessage<GetAPIKeyIdentityResponse> | undefined): boolean;
+}

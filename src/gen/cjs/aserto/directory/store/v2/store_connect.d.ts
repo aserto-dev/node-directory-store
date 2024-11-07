@@ -1,4 +1,4 @@
-import { AssignRoleToTenantRequest, AssignRoleToTenantResponse, CreateTenantRequest, CreateTenantResponse, DeleteIDPConnectionRequest, DeleteIDPConnectionResponse, DeleteTenantRequest, DeleteTenantResponse, GetTenantRequest, GetTenantResponse, InfoRequest, InfoResponse, ListTenantMembersRequest, ListTenantMembersResponse, ListTenantsRequest, ListTenantsResponse, ListUserTenantsRequest, ListUserTenantsResponse, MigrateSchemaRequest, MigrateSchemaResponse, PurgeDeletedTenantsRequest, PurgeDeletedTenantsResponse, RemoveRoleFromTenantRequest, RemoveRoleFromTenantResponse } from "./store_pb.js";
+import { AssignRoleToTenantRequest, AssignRoleToTenantResponse, CreateAPIKeyRequest, CreateAPIKeyResponse, CreateTenantRequest, CreateTenantResponse, DeleteAPIKeyRequest, DeleteAPIKeyResponse, DeleteIDPConnectionRequest, DeleteIDPConnectionResponse, DeleteTenantRequest, DeleteTenantResponse, GetAPIKeyIdentityRequest, GetAPIKeyIdentityResponse, GetTenantRequest, GetTenantResponse, InfoRequest, InfoResponse, ListAPIKeysRequest, ListAPIKeysResponse, ListTenantMembersRequest, ListTenantMembersResponse, ListTenantsRequest, ListTenantsResponse, ListUserTenantsRequest, ListUserTenantsResponse, MigrateSchemaRequest, MigrateSchemaResponse, PurgeDeletedTenantsRequest, PurgeDeletedTenantsResponse, RemoveRoleFromTenantRequest, RemoveRoleFromTenantResponse } from "./store_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 /**
  * @generated from service aserto.directory.store.v2.Store
@@ -112,6 +112,42 @@ export declare const Store: {
             readonly name: "RemoveRoleFromTenant";
             readonly I: typeof RemoveRoleFromTenantRequest;
             readonly O: typeof RemoveRoleFromTenantResponse;
+            readonly kind: MethodKind.Unary;
+        };
+        /**
+         * @generated from rpc aserto.directory.store.v2.Store.ListAPIKeys
+         */
+        readonly listAPIKeys: {
+            readonly name: "ListAPIKeys";
+            readonly I: typeof ListAPIKeysRequest;
+            readonly O: typeof ListAPIKeysResponse;
+            readonly kind: MethodKind.Unary;
+        };
+        /**
+         * @generated from rpc aserto.directory.store.v2.Store.DeleteAPIKey
+         */
+        readonly deleteAPIKey: {
+            readonly name: "DeleteAPIKey";
+            readonly I: typeof DeleteAPIKeyRequest;
+            readonly O: typeof DeleteAPIKeyResponse;
+            readonly kind: MethodKind.Unary;
+        };
+        /**
+         * @generated from rpc aserto.directory.store.v2.Store.CreateAPIKey
+         */
+        readonly createAPIKey: {
+            readonly name: "CreateAPIKey";
+            readonly I: typeof CreateAPIKeyRequest;
+            readonly O: typeof CreateAPIKeyResponse;
+            readonly kind: MethodKind.Unary;
+        };
+        /**
+         * @generated from rpc aserto.directory.store.v2.Store.GetAPIKeyIdentity
+         */
+        readonly getAPIKeyIdentity: {
+            readonly name: "GetAPIKeyIdentity";
+            readonly I: typeof GetAPIKeyIdentityRequest;
+            readonly O: typeof GetAPIKeyIdentityResponse;
             readonly kind: MethodKind.Unary;
         };
     };
