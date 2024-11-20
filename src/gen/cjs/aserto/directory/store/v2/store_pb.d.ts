@@ -1,44 +1,15 @@
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Empty, Message, proto3, Struct, Timestamp } from "@bufbuild/protobuf";
-import { PaginationRequest, PaginationResponse } from "../../common/v3/common_pb.js";
+import type { GenEnum, GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv1";
+import type { Empty, Timestamp } from "@bufbuild/protobuf/wkt";
+import type { PaginationRequest, PaginationResponse } from "../../common/v3/common_pb";
+import type { JsonObject, Message } from "@bufbuild/protobuf";
 /**
- * @generated from enum aserto.directory.store.v2.Schema
+ * Describes the file aserto/directory/store/v2/store.proto.
  */
-export declare enum Schema {
-    /**
-     * @generated from enum value: SCHEMA_UNKNOWN = 0;
-     */
-    UNKNOWN = 0,
-    /**
-     * @generated from enum value: SCHEMA_SHARED = 1;
-     */
-    SHARED = 1,
-    /**
-     * @generated from enum value: SCHEMA_TENANT = 2;
-     */
-    TENANT = 2
-}
-/**
- * @generated from enum aserto.directory.store.v2.Migrate
- */
-export declare enum Migrate {
-    /**
-     * @generated from enum value: MIGRATE_UNKNOWN = 0;
-     */
-    UNKNOWN = 0,
-    /**
-     * @generated from enum value: MIGRATE_UP = 1;
-     */
-    UP = 1,
-    /**
-     * @generated from enum value: MIGRATE_DOWN = 2;
-     */
-    DOWN = 2
-}
+export declare const file_aserto_directory_store_v2_store: GenFile;
 /**
  * @generated from message aserto.directory.store.v2.TenantMember
  */
-export declare class TenantMember extends Message<TenantMember> {
+export type TenantMember = Message<"aserto.directory.store.v2.TenantMember"> & {
     /**
      * @generated from field: string id = 1;
      */
@@ -51,19 +22,16 @@ export declare class TenantMember extends Message<TenantMember> {
      * @generated from field: repeated string roles = 3;
      */
     roles: string[];
-    constructor(data?: PartialMessage<TenantMember>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.TenantMember";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TenantMember;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TenantMember;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TenantMember;
-    static equals(a: TenantMember | PlainMessage<TenantMember> | undefined, b: TenantMember | PlainMessage<TenantMember> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.TenantMember.
+ * Use `create(TenantMemberSchema)` to create a new message.
+ */
+export declare const TenantMemberSchema: GenMessage<TenantMember>;
 /**
  * @generated from message aserto.directory.store.v2.Tenant
  */
-export declare class Tenant extends Message<Tenant> {
+export type Tenant = Message<"aserto.directory.store.v2.Tenant"> & {
     /**
      * tenant id (UUID, aserto-id --type tenant)
      *
@@ -94,19 +62,16 @@ export declare class Tenant extends Message<Tenant> {
      * @generated from field: google.protobuf.Timestamp deleted_at = 22;
      */
     deletedAt?: Timestamp;
-    constructor(data?: PartialMessage<Tenant>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.Tenant";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Tenant;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Tenant;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Tenant;
-    static equals(a: Tenant | PlainMessage<Tenant> | undefined, b: Tenant | PlainMessage<Tenant> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.Tenant.
+ * Use `create(TenantSchema)` to create a new message.
+ */
+export declare const TenantSchema: GenMessage<Tenant>;
 /**
  * @generated from message aserto.directory.store.v2.ListTenantMembersRequest
  */
-export declare class ListTenantMembersRequest extends Message<ListTenantMembersRequest> {
+export type ListTenantMembersRequest = Message<"aserto.directory.store.v2.ListTenantMembersRequest"> & {
     /**
      * @generated from field: string id = 1;
      */
@@ -115,19 +80,16 @@ export declare class ListTenantMembersRequest extends Message<ListTenantMembersR
      * @generated from field: aserto.directory.common.v3.PaginationRequest page = 9;
      */
     page?: PaginationRequest;
-    constructor(data?: PartialMessage<ListTenantMembersRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.ListTenantMembersRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTenantMembersRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTenantMembersRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTenantMembersRequest;
-    static equals(a: ListTenantMembersRequest | PlainMessage<ListTenantMembersRequest> | undefined, b: ListTenantMembersRequest | PlainMessage<ListTenantMembersRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.ListTenantMembersRequest.
+ * Use `create(ListTenantMembersRequestSchema)` to create a new message.
+ */
+export declare const ListTenantMembersRequestSchema: GenMessage<ListTenantMembersRequest>;
 /**
  * @generated from message aserto.directory.store.v2.ListTenantMembersResponse
  */
-export declare class ListTenantMembersResponse extends Message<ListTenantMembersResponse> {
+export type ListTenantMembersResponse = Message<"aserto.directory.store.v2.ListTenantMembersResponse"> & {
     /**
      * @generated from field: repeated aserto.directory.store.v2.TenantMember results = 1;
      */
@@ -136,19 +98,16 @@ export declare class ListTenantMembersResponse extends Message<ListTenantMembers
      * @generated from field: aserto.directory.common.v3.PaginationResponse page = 9;
      */
     page?: PaginationResponse;
-    constructor(data?: PartialMessage<ListTenantMembersResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.ListTenantMembersResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTenantMembersResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTenantMembersResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTenantMembersResponse;
-    static equals(a: ListTenantMembersResponse | PlainMessage<ListTenantMembersResponse> | undefined, b: ListTenantMembersResponse | PlainMessage<ListTenantMembersResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.ListTenantMembersResponse.
+ * Use `create(ListTenantMembersResponseSchema)` to create a new message.
+ */
+export declare const ListTenantMembersResponseSchema: GenMessage<ListTenantMembersResponse>;
 /**
  * @generated from message aserto.directory.store.v2.AssignRoleToTenantRequest
  */
-export declare class AssignRoleToTenantRequest extends Message<AssignRoleToTenantRequest> {
+export type AssignRoleToTenantRequest = Message<"aserto.directory.store.v2.AssignRoleToTenantRequest"> & {
     /**
      * @generated from field: string tenant_id = 1;
      */
@@ -161,36 +120,30 @@ export declare class AssignRoleToTenantRequest extends Message<AssignRoleToTenan
      * @generated from field: string role = 3;
      */
     role: string;
-    constructor(data?: PartialMessage<AssignRoleToTenantRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.AssignRoleToTenantRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignRoleToTenantRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignRoleToTenantRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignRoleToTenantRequest;
-    static equals(a: AssignRoleToTenantRequest | PlainMessage<AssignRoleToTenantRequest> | undefined, b: AssignRoleToTenantRequest | PlainMessage<AssignRoleToTenantRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.AssignRoleToTenantRequest.
+ * Use `create(AssignRoleToTenantRequestSchema)` to create a new message.
+ */
+export declare const AssignRoleToTenantRequestSchema: GenMessage<AssignRoleToTenantRequest>;
 /**
  * @generated from message aserto.directory.store.v2.AssignRoleToTenantResponse
  */
-export declare class AssignRoleToTenantResponse extends Message<AssignRoleToTenantResponse> {
+export type AssignRoleToTenantResponse = Message<"aserto.directory.store.v2.AssignRoleToTenantResponse"> & {
     /**
      * @generated from field: google.protobuf.Empty result = 1;
      */
     result?: Empty;
-    constructor(data?: PartialMessage<AssignRoleToTenantResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.AssignRoleToTenantResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignRoleToTenantResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignRoleToTenantResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignRoleToTenantResponse;
-    static equals(a: AssignRoleToTenantResponse | PlainMessage<AssignRoleToTenantResponse> | undefined, b: AssignRoleToTenantResponse | PlainMessage<AssignRoleToTenantResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.AssignRoleToTenantResponse.
+ * Use `create(AssignRoleToTenantResponseSchema)` to create a new message.
+ */
+export declare const AssignRoleToTenantResponseSchema: GenMessage<AssignRoleToTenantResponse>;
 /**
  * @generated from message aserto.directory.store.v2.RemoveRoleFromTenantRequest
  */
-export declare class RemoveRoleFromTenantRequest extends Message<RemoveRoleFromTenantRequest> {
+export type RemoveRoleFromTenantRequest = Message<"aserto.directory.store.v2.RemoveRoleFromTenantRequest"> & {
     /**
      * @generated from field: string tenant_id = 1;
      */
@@ -203,36 +156,30 @@ export declare class RemoveRoleFromTenantRequest extends Message<RemoveRoleFromT
      * @generated from field: string role = 3;
      */
     role: string;
-    constructor(data?: PartialMessage<RemoveRoleFromTenantRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.RemoveRoleFromTenantRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveRoleFromTenantRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveRoleFromTenantRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveRoleFromTenantRequest;
-    static equals(a: RemoveRoleFromTenantRequest | PlainMessage<RemoveRoleFromTenantRequest> | undefined, b: RemoveRoleFromTenantRequest | PlainMessage<RemoveRoleFromTenantRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.RemoveRoleFromTenantRequest.
+ * Use `create(RemoveRoleFromTenantRequestSchema)` to create a new message.
+ */
+export declare const RemoveRoleFromTenantRequestSchema: GenMessage<RemoveRoleFromTenantRequest>;
 /**
  * @generated from message aserto.directory.store.v2.RemoveRoleFromTenantResponse
  */
-export declare class RemoveRoleFromTenantResponse extends Message<RemoveRoleFromTenantResponse> {
+export type RemoveRoleFromTenantResponse = Message<"aserto.directory.store.v2.RemoveRoleFromTenantResponse"> & {
     /**
      * @generated from field: google.protobuf.Empty result = 1;
      */
     result?: Empty;
-    constructor(data?: PartialMessage<RemoveRoleFromTenantResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.RemoveRoleFromTenantResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveRoleFromTenantResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveRoleFromTenantResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveRoleFromTenantResponse;
-    static equals(a: RemoveRoleFromTenantResponse | PlainMessage<RemoveRoleFromTenantResponse> | undefined, b: RemoveRoleFromTenantResponse | PlainMessage<RemoveRoleFromTenantResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.RemoveRoleFromTenantResponse.
+ * Use `create(RemoveRoleFromTenantResponseSchema)` to create a new message.
+ */
+export declare const RemoveRoleFromTenantResponseSchema: GenMessage<RemoveRoleFromTenantResponse>;
 /**
  * @generated from message aserto.directory.store.v2.ListUserTenantsRequest
  */
-export declare class ListUserTenantsRequest extends Message<ListUserTenantsRequest> {
+export type ListUserTenantsRequest = Message<"aserto.directory.store.v2.ListUserTenantsRequest"> & {
     /**
      * @generated from field: string id = 1;
      */
@@ -241,19 +188,16 @@ export declare class ListUserTenantsRequest extends Message<ListUserTenantsReque
      * @generated from field: aserto.directory.common.v3.PaginationRequest page = 9;
      */
     page?: PaginationRequest;
-    constructor(data?: PartialMessage<ListUserTenantsRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.ListUserTenantsRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUserTenantsRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUserTenantsRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUserTenantsRequest;
-    static equals(a: ListUserTenantsRequest | PlainMessage<ListUserTenantsRequest> | undefined, b: ListUserTenantsRequest | PlainMessage<ListUserTenantsRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.ListUserTenantsRequest.
+ * Use `create(ListUserTenantsRequestSchema)` to create a new message.
+ */
+export declare const ListUserTenantsRequestSchema: GenMessage<ListUserTenantsRequest>;
 /**
  * @generated from message aserto.directory.store.v2.ListUserTenantsResponse
  */
-export declare class ListUserTenantsResponse extends Message<ListUserTenantsResponse> {
+export type ListUserTenantsResponse = Message<"aserto.directory.store.v2.ListUserTenantsResponse"> & {
     /**
      * @generated from field: repeated aserto.directory.store.v2.Tenant results = 1;
      */
@@ -262,19 +206,16 @@ export declare class ListUserTenantsResponse extends Message<ListUserTenantsResp
      * @generated from field: aserto.directory.common.v3.PaginationResponse page = 9;
      */
     page?: PaginationResponse;
-    constructor(data?: PartialMessage<ListUserTenantsResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.ListUserTenantsResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUserTenantsResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUserTenantsResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUserTenantsResponse;
-    static equals(a: ListUserTenantsResponse | PlainMessage<ListUserTenantsResponse> | undefined, b: ListUserTenantsResponse | PlainMessage<ListUserTenantsResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.ListUserTenantsResponse.
+ * Use `create(ListUserTenantsResponseSchema)` to create a new message.
+ */
+export declare const ListUserTenantsResponseSchema: GenMessage<ListUserTenantsResponse>;
 /**
  * @generated from message aserto.directory.store.v2.GetTenantRequest
  */
-export declare class GetTenantRequest extends Message<GetTenantRequest> {
+export type GetTenantRequest = Message<"aserto.directory.store.v2.GetTenantRequest"> & {
     /**
      * @generated from oneof aserto.directory.store.v2.GetTenantRequest.data
      */
@@ -298,76 +239,64 @@ export declare class GetTenantRequest extends Message<GetTenantRequest> {
         case: undefined;
         value?: undefined;
     };
-    constructor(data?: PartialMessage<GetTenantRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.GetTenantRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTenantRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTenantRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTenantRequest;
-    static equals(a: GetTenantRequest | PlainMessage<GetTenantRequest> | undefined, b: GetTenantRequest | PlainMessage<GetTenantRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.GetTenantRequest.
+ * Use `create(GetTenantRequestSchema)` to create a new message.
+ */
+export declare const GetTenantRequestSchema: GenMessage<GetTenantRequest>;
 /**
  * @generated from message aserto.directory.store.v2.GetTenantResponse
  */
-export declare class GetTenantResponse extends Message<GetTenantResponse> {
+export type GetTenantResponse = Message<"aserto.directory.store.v2.GetTenantResponse"> & {
     /**
      * tenant instance
      *
      * @generated from field: aserto.directory.store.v2.Tenant result = 1;
      */
     result?: Tenant;
-    constructor(data?: PartialMessage<GetTenantResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.GetTenantResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTenantResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTenantResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTenantResponse;
-    static equals(a: GetTenantResponse | PlainMessage<GetTenantResponse> | undefined, b: GetTenantResponse | PlainMessage<GetTenantResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.GetTenantResponse.
+ * Use `create(GetTenantResponseSchema)` to create a new message.
+ */
+export declare const GetTenantResponseSchema: GenMessage<GetTenantResponse>;
 /**
  * @generated from message aserto.directory.store.v2.CreateTenantRequest
  */
-export declare class CreateTenantRequest extends Message<CreateTenantRequest> {
+export type CreateTenantRequest = Message<"aserto.directory.store.v2.CreateTenantRequest"> & {
     /**
      * tenant instance
      *
      * @generated from field: aserto.directory.store.v2.Tenant tenant = 1;
      */
     tenant?: Tenant;
-    constructor(data?: PartialMessage<CreateTenantRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.CreateTenantRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateTenantRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateTenantRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateTenantRequest;
-    static equals(a: CreateTenantRequest | PlainMessage<CreateTenantRequest> | undefined, b: CreateTenantRequest | PlainMessage<CreateTenantRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.CreateTenantRequest.
+ * Use `create(CreateTenantRequestSchema)` to create a new message.
+ */
+export declare const CreateTenantRequestSchema: GenMessage<CreateTenantRequest>;
 /**
  * @generated from message aserto.directory.store.v2.CreateTenantResponse
  */
-export declare class CreateTenantResponse extends Message<CreateTenantResponse> {
+export type CreateTenantResponse = Message<"aserto.directory.store.v2.CreateTenantResponse"> & {
     /**
      * tenant instance
      *
      * @generated from field: aserto.directory.store.v2.Tenant result = 1;
      */
     result?: Tenant;
-    constructor(data?: PartialMessage<CreateTenantResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.CreateTenantResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateTenantResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateTenantResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateTenantResponse;
-    static equals(a: CreateTenantResponse | PlainMessage<CreateTenantResponse> | undefined, b: CreateTenantResponse | PlainMessage<CreateTenantResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.CreateTenantResponse.
+ * Use `create(CreateTenantResponseSchema)` to create a new message.
+ */
+export declare const CreateTenantResponseSchema: GenMessage<CreateTenantResponse>;
 /**
  * @generated from message aserto.directory.store.v2.DeleteTenantRequest
  */
-export declare class DeleteTenantRequest extends Message<DeleteTenantRequest> {
+export type DeleteTenantRequest = Message<"aserto.directory.store.v2.DeleteTenantRequest"> & {
     /**
      * tenant id (UUID, aserto-id --type tenant)
      *
@@ -380,55 +309,46 @@ export declare class DeleteTenantRequest extends Message<DeleteTenantRequest> {
      * @generated from field: bool hard = 2;
      */
     hard: boolean;
-    constructor(data?: PartialMessage<DeleteTenantRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.DeleteTenantRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteTenantRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteTenantRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteTenantRequest;
-    static equals(a: DeleteTenantRequest | PlainMessage<DeleteTenantRequest> | undefined, b: DeleteTenantRequest | PlainMessage<DeleteTenantRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.DeleteTenantRequest.
+ * Use `create(DeleteTenantRequestSchema)` to create a new message.
+ */
+export declare const DeleteTenantRequestSchema: GenMessage<DeleteTenantRequest>;
 /**
  * @generated from message aserto.directory.store.v2.DeleteTenantResponse
  */
-export declare class DeleteTenantResponse extends Message<DeleteTenantResponse> {
+export type DeleteTenantResponse = Message<"aserto.directory.store.v2.DeleteTenantResponse"> & {
     /**
      * @generated from field: google.protobuf.Empty result = 1;
      */
     result?: Empty;
-    constructor(data?: PartialMessage<DeleteTenantResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.DeleteTenantResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteTenantResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteTenantResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteTenantResponse;
-    static equals(a: DeleteTenantResponse | PlainMessage<DeleteTenantResponse> | undefined, b: DeleteTenantResponse | PlainMessage<DeleteTenantResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.DeleteTenantResponse.
+ * Use `create(DeleteTenantResponseSchema)` to create a new message.
+ */
+export declare const DeleteTenantResponseSchema: GenMessage<DeleteTenantResponse>;
 /**
  * @generated from message aserto.directory.store.v2.ListTenantsRequest
  */
-export declare class ListTenantsRequest extends Message<ListTenantsRequest> {
+export type ListTenantsRequest = Message<"aserto.directory.store.v2.ListTenantsRequest"> & {
     /**
      * pagination request
      *
      * @generated from field: aserto.directory.common.v3.PaginationRequest page = 9;
      */
     page?: PaginationRequest;
-    constructor(data?: PartialMessage<ListTenantsRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.ListTenantsRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTenantsRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTenantsRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTenantsRequest;
-    static equals(a: ListTenantsRequest | PlainMessage<ListTenantsRequest> | undefined, b: ListTenantsRequest | PlainMessage<ListTenantsRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.ListTenantsRequest.
+ * Use `create(ListTenantsRequestSchema)` to create a new message.
+ */
+export declare const ListTenantsRequestSchema: GenMessage<ListTenantsRequest>;
 /**
  * @generated from message aserto.directory.store.v2.ListTenantsResponse
  */
-export declare class ListTenantsResponse extends Message<ListTenantsResponse> {
+export type ListTenantsResponse = Message<"aserto.directory.store.v2.ListTenantsResponse"> & {
     /**
      * result tenant list
      *
@@ -441,19 +361,16 @@ export declare class ListTenantsResponse extends Message<ListTenantsResponse> {
      * @generated from field: aserto.directory.common.v3.PaginationResponse page = 9;
      */
     page?: PaginationResponse;
-    constructor(data?: PartialMessage<ListTenantsResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.ListTenantsResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTenantsResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTenantsResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTenantsResponse;
-    static equals(a: ListTenantsResponse | PlainMessage<ListTenantsResponse> | undefined, b: ListTenantsResponse | PlainMessage<ListTenantsResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.ListTenantsResponse.
+ * Use `create(ListTenantsResponseSchema)` to create a new message.
+ */
+export declare const ListTenantsResponseSchema: GenMessage<ListTenantsResponse>;
 /**
  * @generated from message aserto.directory.store.v2.PurgeDeletedTenantsRequest
  */
-export declare class PurgeDeletedTenantsRequest extends Message<PurgeDeletedTenantsRequest> {
+export type PurgeDeletedTenantsRequest = Message<"aserto.directory.store.v2.PurgeDeletedTenantsRequest"> & {
     /**
      * if spcecified, only purge tenants deleted
      *
@@ -468,38 +385,32 @@ export declare class PurgeDeletedTenantsRequest extends Message<PurgeDeletedTena
      * @generated from field: string id = 2;
      */
     id: string;
-    constructor(data?: PartialMessage<PurgeDeletedTenantsRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.PurgeDeletedTenantsRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PurgeDeletedTenantsRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PurgeDeletedTenantsRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PurgeDeletedTenantsRequest;
-    static equals(a: PurgeDeletedTenantsRequest | PlainMessage<PurgeDeletedTenantsRequest> | undefined, b: PurgeDeletedTenantsRequest | PlainMessage<PurgeDeletedTenantsRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.PurgeDeletedTenantsRequest.
+ * Use `create(PurgeDeletedTenantsRequestSchema)` to create a new message.
+ */
+export declare const PurgeDeletedTenantsRequestSchema: GenMessage<PurgeDeletedTenantsRequest>;
 /**
  * @generated from message aserto.directory.store.v2.PurgeDeletedTenantsResponse
  */
-export declare class PurgeDeletedTenantsResponse extends Message<PurgeDeletedTenantsResponse> {
+export type PurgeDeletedTenantsResponse = Message<"aserto.directory.store.v2.PurgeDeletedTenantsResponse"> & {
     /**
      * list of purged tenants
      *
      * @generated from field: repeated aserto.directory.store.v2.Tenant results = 1;
      */
     results: Tenant[];
-    constructor(data?: PartialMessage<PurgeDeletedTenantsResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.PurgeDeletedTenantsResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PurgeDeletedTenantsResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PurgeDeletedTenantsResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PurgeDeletedTenantsResponse;
-    static equals(a: PurgeDeletedTenantsResponse | PlainMessage<PurgeDeletedTenantsResponse> | undefined, b: PurgeDeletedTenantsResponse | PlainMessage<PurgeDeletedTenantsResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.PurgeDeletedTenantsResponse.
+ * Use `create(PurgeDeletedTenantsResponseSchema)` to create a new message.
+ */
+export declare const PurgeDeletedTenantsResponseSchema: GenMessage<PurgeDeletedTenantsResponse>;
 /**
  * @generated from message aserto.directory.store.v2.MigrateSchemaRequest
  */
-export declare class MigrateSchemaRequest extends Message<MigrateSchemaRequest> {
+export type MigrateSchemaRequest = Message<"aserto.directory.store.v2.MigrateSchemaRequest"> & {
     /**
      * schemae SHARED or TENANT
      *
@@ -524,38 +435,32 @@ export declare class MigrateSchemaRequest extends Message<MigrateSchemaRequest> 
      * @generated from field: optional string tenant_id = 4;
      */
     tenantId?: string;
-    constructor(data?: PartialMessage<MigrateSchemaRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.MigrateSchemaRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MigrateSchemaRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MigrateSchemaRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MigrateSchemaRequest;
-    static equals(a: MigrateSchemaRequest | PlainMessage<MigrateSchemaRequest> | undefined, b: MigrateSchemaRequest | PlainMessage<MigrateSchemaRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.MigrateSchemaRequest.
+ * Use `create(MigrateSchemaRequestSchema)` to create a new message.
+ */
+export declare const MigrateSchemaRequestSchema: GenMessage<MigrateSchemaRequest>;
 /**
  * @generated from message aserto.directory.store.v2.MigrateSchemaResponse
  */
-export declare class MigrateSchemaResponse extends Message<MigrateSchemaResponse> {
+export type MigrateSchemaResponse = Message<"aserto.directory.store.v2.MigrateSchemaResponse"> & {
     /**
      * migration results
      *
      * @generated from field: repeated aserto.directory.store.v2.Migration results = 1;
      */
     results: Migration[];
-    constructor(data?: PartialMessage<MigrateSchemaResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.MigrateSchemaResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MigrateSchemaResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MigrateSchemaResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MigrateSchemaResponse;
-    static equals(a: MigrateSchemaResponse | PlainMessage<MigrateSchemaResponse> | undefined, b: MigrateSchemaResponse | PlainMessage<MigrateSchemaResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.MigrateSchemaResponse.
+ * Use `create(MigrateSchemaResponseSchema)` to create a new message.
+ */
+export declare const MigrateSchemaResponseSchema: GenMessage<MigrateSchemaResponse>;
 /**
  * @generated from message aserto.directory.store.v2.Migration
  */
-export declare class Migration extends Message<Migration> {
+export type Migration = Message<"aserto.directory.store.v2.Migration"> & {
     /**
      * tenant-id (0 == NO tenant)
      *
@@ -574,57 +479,48 @@ export declare class Migration extends Message<Migration> {
      * @generated from field: string status = 3;
      */
     status: string;
-    constructor(data?: PartialMessage<Migration>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.Migration";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Migration;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Migration;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Migration;
-    static equals(a: Migration | PlainMessage<Migration> | undefined, b: Migration | PlainMessage<Migration> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.Migration.
+ * Use `create(MigrationSchema)` to create a new message.
+ */
+export declare const MigrationSchema: GenMessage<Migration>;
 /**
  * @generated from message aserto.directory.store.v2.InfoRequest
  */
-export declare class InfoRequest extends Message<InfoRequest> {
+export type InfoRequest = Message<"aserto.directory.store.v2.InfoRequest"> & {
     /**
      * tenant id (UUID, aserto-id --type tenant)
      *
      * @generated from field: string id = 1;
      */
     id: string;
-    constructor(data?: PartialMessage<InfoRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.InfoRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): InfoRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): InfoRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): InfoRequest;
-    static equals(a: InfoRequest | PlainMessage<InfoRequest> | undefined, b: InfoRequest | PlainMessage<InfoRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.InfoRequest.
+ * Use `create(InfoRequestSchema)` to create a new message.
+ */
+export declare const InfoRequestSchema: GenMessage<InfoRequest>;
 /**
  * @generated from message aserto.directory.store.v2.InfoResponse
  */
-export declare class InfoResponse extends Message<InfoResponse> {
+export type InfoResponse = Message<"aserto.directory.store.v2.InfoResponse"> & {
     /**
      * tenant store info
      *
      * @generated from field: google.protobuf.Struct info = 1;
      */
-    info?: Struct;
-    constructor(data?: PartialMessage<InfoResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.InfoResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): InfoResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): InfoResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): InfoResponse;
-    static equals(a: InfoResponse | PlainMessage<InfoResponse> | undefined, b: InfoResponse | PlainMessage<InfoResponse> | undefined): boolean;
-}
+    info?: JsonObject;
+};
+/**
+ * Describes the message aserto.directory.store.v2.InfoResponse.
+ * Use `create(InfoResponseSchema)` to create a new message.
+ */
+export declare const InfoResponseSchema: GenMessage<InfoResponse>;
 /**
  * @generated from message aserto.directory.store.v2.DeleteIDPConnectionRequest
  */
-export declare class DeleteIDPConnectionRequest extends Message<DeleteIDPConnectionRequest> {
+export type DeleteIDPConnectionRequest = Message<"aserto.directory.store.v2.DeleteIDPConnectionRequest"> & {
     /**
      * tenant id (UUID, aserto-id --type tenant)
      *
@@ -637,36 +533,30 @@ export declare class DeleteIDPConnectionRequest extends Message<DeleteIDPConnect
      * @generated from field: string connection = 2;
      */
     connection: string;
-    constructor(data?: PartialMessage<DeleteIDPConnectionRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.DeleteIDPConnectionRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteIDPConnectionRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteIDPConnectionRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteIDPConnectionRequest;
-    static equals(a: DeleteIDPConnectionRequest | PlainMessage<DeleteIDPConnectionRequest> | undefined, b: DeleteIDPConnectionRequest | PlainMessage<DeleteIDPConnectionRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.DeleteIDPConnectionRequest.
+ * Use `create(DeleteIDPConnectionRequestSchema)` to create a new message.
+ */
+export declare const DeleteIDPConnectionRequestSchema: GenMessage<DeleteIDPConnectionRequest>;
 /**
  * @generated from message aserto.directory.store.v2.DeleteIDPConnectionResponse
  */
-export declare class DeleteIDPConnectionResponse extends Message<DeleteIDPConnectionResponse> {
+export type DeleteIDPConnectionResponse = Message<"aserto.directory.store.v2.DeleteIDPConnectionResponse"> & {
     /**
      * @generated from field: google.protobuf.Empty result = 1;
      */
     result?: Empty;
-    constructor(data?: PartialMessage<DeleteIDPConnectionResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.DeleteIDPConnectionResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteIDPConnectionResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteIDPConnectionResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteIDPConnectionResponse;
-    static equals(a: DeleteIDPConnectionResponse | PlainMessage<DeleteIDPConnectionResponse> | undefined, b: DeleteIDPConnectionResponse | PlainMessage<DeleteIDPConnectionResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.DeleteIDPConnectionResponse.
+ * Use `create(DeleteIDPConnectionResponseSchema)` to create a new message.
+ */
+export declare const DeleteIDPConnectionResponseSchema: GenMessage<DeleteIDPConnectionResponse>;
 /**
  * @generated from message aserto.directory.store.v2.ListAPIKeysRequest
  */
-export declare class ListAPIKeysRequest extends Message<ListAPIKeysRequest> {
+export type ListAPIKeysRequest = Message<"aserto.directory.store.v2.ListAPIKeysRequest"> & {
     /**
      * tenant id
      *
@@ -679,38 +569,32 @@ export declare class ListAPIKeysRequest extends Message<ListAPIKeysRequest> {
      * @generated from field: string role = 2;
      */
     role: string;
-    constructor(data?: PartialMessage<ListAPIKeysRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.ListAPIKeysRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAPIKeysRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAPIKeysRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAPIKeysRequest;
-    static equals(a: ListAPIKeysRequest | PlainMessage<ListAPIKeysRequest> | undefined, b: ListAPIKeysRequest | PlainMessage<ListAPIKeysRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.ListAPIKeysRequest.
+ * Use `create(ListAPIKeysRequestSchema)` to create a new message.
+ */
+export declare const ListAPIKeysRequestSchema: GenMessage<ListAPIKeysRequest>;
 /**
  * @generated from message aserto.directory.store.v2.ListAPIKeysResponse
  */
-export declare class ListAPIKeysResponse extends Message<ListAPIKeysResponse> {
+export type ListAPIKeysResponse = Message<"aserto.directory.store.v2.ListAPIKeysResponse"> & {
     /**
      * list of api keys
      *
      * @generated from field: repeated aserto.directory.store.v2.APIKey results = 1;
      */
     results: APIKey[];
-    constructor(data?: PartialMessage<ListAPIKeysResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.ListAPIKeysResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAPIKeysResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAPIKeysResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAPIKeysResponse;
-    static equals(a: ListAPIKeysResponse | PlainMessage<ListAPIKeysResponse> | undefined, b: ListAPIKeysResponse | PlainMessage<ListAPIKeysResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.ListAPIKeysResponse.
+ * Use `create(ListAPIKeysResponseSchema)` to create a new message.
+ */
+export declare const ListAPIKeysResponseSchema: GenMessage<ListAPIKeysResponse>;
 /**
  * @generated from message aserto.directory.store.v2.APIKey
  */
-export declare class APIKey extends Message<APIKey> {
+export type APIKey = Message<"aserto.directory.store.v2.APIKey"> & {
     /**
      * api key version
      *
@@ -735,19 +619,16 @@ export declare class APIKey extends Message<APIKey> {
      * @generated from field: google.protobuf.Timestamp created_at = 4;
      */
     createdAt?: Timestamp;
-    constructor(data?: PartialMessage<APIKey>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.APIKey";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): APIKey;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): APIKey;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): APIKey;
-    static equals(a: APIKey | PlainMessage<APIKey> | undefined, b: APIKey | PlainMessage<APIKey> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.APIKey.
+ * Use `create(APIKeySchema)` to create a new message.
+ */
+export declare const APIKeySchema: GenMessage<APIKey>;
 /**
  * @generated from message aserto.directory.store.v2.DeleteAPIKeyRequest
  */
-export declare class DeleteAPIKeyRequest extends Message<DeleteAPIKeyRequest> {
+export type DeleteAPIKeyRequest = Message<"aserto.directory.store.v2.DeleteAPIKeyRequest"> & {
     /**
      * tenant id
      *
@@ -766,36 +647,30 @@ export declare class DeleteAPIKeyRequest extends Message<DeleteAPIKeyRequest> {
      * @generated from field: int32 version = 3;
      */
     version: number;
-    constructor(data?: PartialMessage<DeleteAPIKeyRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.DeleteAPIKeyRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteAPIKeyRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteAPIKeyRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteAPIKeyRequest;
-    static equals(a: DeleteAPIKeyRequest | PlainMessage<DeleteAPIKeyRequest> | undefined, b: DeleteAPIKeyRequest | PlainMessage<DeleteAPIKeyRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.DeleteAPIKeyRequest.
+ * Use `create(DeleteAPIKeyRequestSchema)` to create a new message.
+ */
+export declare const DeleteAPIKeyRequestSchema: GenMessage<DeleteAPIKeyRequest>;
 /**
  * @generated from message aserto.directory.store.v2.DeleteAPIKeyResponse
  */
-export declare class DeleteAPIKeyResponse extends Message<DeleteAPIKeyResponse> {
+export type DeleteAPIKeyResponse = Message<"aserto.directory.store.v2.DeleteAPIKeyResponse"> & {
     /**
      * @generated from field: google.protobuf.Empty result = 1;
      */
     result?: Empty;
-    constructor(data?: PartialMessage<DeleteAPIKeyResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.DeleteAPIKeyResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteAPIKeyResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteAPIKeyResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteAPIKeyResponse;
-    static equals(a: DeleteAPIKeyResponse | PlainMessage<DeleteAPIKeyResponse> | undefined, b: DeleteAPIKeyResponse | PlainMessage<DeleteAPIKeyResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.DeleteAPIKeyResponse.
+ * Use `create(DeleteAPIKeyResponseSchema)` to create a new message.
+ */
+export declare const DeleteAPIKeyResponseSchema: GenMessage<DeleteAPIKeyResponse>;
 /**
  * @generated from message aserto.directory.store.v2.CreateAPIKeyRequest
  */
-export declare class CreateAPIKeyRequest extends Message<CreateAPIKeyRequest> {
+export type CreateAPIKeyRequest = Message<"aserto.directory.store.v2.CreateAPIKeyRequest"> & {
     /**
      * tenant id
      *
@@ -814,38 +689,32 @@ export declare class CreateAPIKeyRequest extends Message<CreateAPIKeyRequest> {
      * @generated from field: google.protobuf.Timestamp expires_at = 3;
      */
     expiresAt?: Timestamp;
-    constructor(data?: PartialMessage<CreateAPIKeyRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.CreateAPIKeyRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateAPIKeyRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateAPIKeyRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateAPIKeyRequest;
-    static equals(a: CreateAPIKeyRequest | PlainMessage<CreateAPIKeyRequest> | undefined, b: CreateAPIKeyRequest | PlainMessage<CreateAPIKeyRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.CreateAPIKeyRequest.
+ * Use `create(CreateAPIKeyRequestSchema)` to create a new message.
+ */
+export declare const CreateAPIKeyRequestSchema: GenMessage<CreateAPIKeyRequest>;
 /**
  * @generated from message aserto.directory.store.v2.CreateAPIKeyResponse
  */
-export declare class CreateAPIKeyResponse extends Message<CreateAPIKeyResponse> {
+export type CreateAPIKeyResponse = Message<"aserto.directory.store.v2.CreateAPIKeyResponse"> & {
     /**
      * api key
      *
      * @generated from field: aserto.directory.store.v2.APIKey result = 1;
      */
     result?: APIKey;
-    constructor(data?: PartialMessage<CreateAPIKeyResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.CreateAPIKeyResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateAPIKeyResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateAPIKeyResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateAPIKeyResponse;
-    static equals(a: CreateAPIKeyResponse | PlainMessage<CreateAPIKeyResponse> | undefined, b: CreateAPIKeyResponse | PlainMessage<CreateAPIKeyResponse> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.CreateAPIKeyResponse.
+ * Use `create(CreateAPIKeyResponseSchema)` to create a new message.
+ */
+export declare const CreateAPIKeyResponseSchema: GenMessage<CreateAPIKeyResponse>;
 /**
  * @generated from message aserto.directory.store.v2.GetAPIKeyIdentityRequest
  */
-export declare class GetAPIKeyIdentityRequest extends Message<GetAPIKeyIdentityRequest> {
+export type GetAPIKeyIdentityRequest = Message<"aserto.directory.store.v2.GetAPIKeyIdentityRequest"> & {
     /**
      * tenant id
      *
@@ -858,19 +727,16 @@ export declare class GetAPIKeyIdentityRequest extends Message<GetAPIKeyIdentityR
      * @generated from field: string key = 2;
      */
     key: string;
-    constructor(data?: PartialMessage<GetAPIKeyIdentityRequest>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.GetAPIKeyIdentityRequest";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAPIKeyIdentityRequest;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAPIKeyIdentityRequest;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAPIKeyIdentityRequest;
-    static equals(a: GetAPIKeyIdentityRequest | PlainMessage<GetAPIKeyIdentityRequest> | undefined, b: GetAPIKeyIdentityRequest | PlainMessage<GetAPIKeyIdentityRequest> | undefined): boolean;
-}
+};
+/**
+ * Describes the message aserto.directory.store.v2.GetAPIKeyIdentityRequest.
+ * Use `create(GetAPIKeyIdentityRequestSchema)` to create a new message.
+ */
+export declare const GetAPIKeyIdentityRequestSchema: GenMessage<GetAPIKeyIdentityRequest>;
 /**
  * @generated from message aserto.directory.store.v2.GetAPIKeyIdentityResponse
  */
-export declare class GetAPIKeyIdentityResponse extends Message<GetAPIKeyIdentityResponse> {
+export type GetAPIKeyIdentityResponse = Message<"aserto.directory.store.v2.GetAPIKeyIdentityResponse"> & {
     /**
      * machine account identity
      *
@@ -883,12 +749,184 @@ export declare class GetAPIKeyIdentityResponse extends Message<GetAPIKeyIdentity
      * @generated from field: google.protobuf.Timestamp expires_at = 2;
      */
     expiresAt?: Timestamp;
-    constructor(data?: PartialMessage<GetAPIKeyIdentityResponse>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.store.v2.GetAPIKeyIdentityResponse";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAPIKeyIdentityResponse;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAPIKeyIdentityResponse;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAPIKeyIdentityResponse;
-    static equals(a: GetAPIKeyIdentityResponse | PlainMessage<GetAPIKeyIdentityResponse> | undefined, b: GetAPIKeyIdentityResponse | PlainMessage<GetAPIKeyIdentityResponse> | undefined): boolean;
+};
+/**
+ * Describes the message aserto.directory.store.v2.GetAPIKeyIdentityResponse.
+ * Use `create(GetAPIKeyIdentityResponseSchema)` to create a new message.
+ */
+export declare const GetAPIKeyIdentityResponseSchema: GenMessage<GetAPIKeyIdentityResponse>;
+/**
+ * @generated from enum aserto.directory.store.v2.Schema
+ */
+export declare enum Schema {
+    /**
+     * @generated from enum value: SCHEMA_UNKNOWN = 0;
+     */
+    UNKNOWN = 0,
+    /**
+     * @generated from enum value: SCHEMA_SHARED = 1;
+     */
+    SHARED = 1,
+    /**
+     * @generated from enum value: SCHEMA_TENANT = 2;
+     */
+    TENANT = 2
 }
+/**
+ * Describes the enum aserto.directory.store.v2.Schema.
+ */
+export declare const SchemaSchema: GenEnum<Schema>;
+/**
+ * @generated from enum aserto.directory.store.v2.Migrate
+ */
+export declare enum Migrate {
+    /**
+     * @generated from enum value: MIGRATE_UNKNOWN = 0;
+     */
+    UNKNOWN = 0,
+    /**
+     * @generated from enum value: MIGRATE_UP = 1;
+     */
+    UP = 1,
+    /**
+     * @generated from enum value: MIGRATE_DOWN = 2;
+     */
+    DOWN = 2
+}
+/**
+ * Describes the enum aserto.directory.store.v2.Migrate.
+ */
+export declare const MigrateSchema: GenEnum<Migrate>;
+/**
+ * @generated from service aserto.directory.store.v2.Store
+ */
+export declare const Store: GenService<{
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.GetTenant
+     */
+    getTenant: {
+        methodKind: "unary";
+        input: typeof GetTenantRequestSchema;
+        output: typeof GetTenantResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.CreateTenant
+     */
+    createTenant: {
+        methodKind: "unary";
+        input: typeof CreateTenantRequestSchema;
+        output: typeof CreateTenantResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.DeleteTenant
+     */
+    deleteTenant: {
+        methodKind: "unary";
+        input: typeof DeleteTenantRequestSchema;
+        output: typeof DeleteTenantResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.ListTenants
+     */
+    listTenants: {
+        methodKind: "unary";
+        input: typeof ListTenantsRequestSchema;
+        output: typeof ListTenantsResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.PurgeDeletedTenants
+     */
+    purgeDeletedTenants: {
+        methodKind: "unary";
+        input: typeof PurgeDeletedTenantsRequestSchema;
+        output: typeof PurgeDeletedTenantsResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.MigrateSchema
+     */
+    migrateSchema: {
+        methodKind: "unary";
+        input: typeof MigrateSchemaRequestSchema;
+        output: typeof MigrateSchemaResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.Info
+     */
+    info: {
+        methodKind: "unary";
+        input: typeof InfoRequestSchema;
+        output: typeof InfoResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.DeleteIDPConnection
+     */
+    deleteIDPConnection: {
+        methodKind: "unary";
+        input: typeof DeleteIDPConnectionRequestSchema;
+        output: typeof DeleteIDPConnectionResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.ListTenantMembers
+     */
+    listTenantMembers: {
+        methodKind: "unary";
+        input: typeof ListTenantMembersRequestSchema;
+        output: typeof ListTenantMembersResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.ListUserTenants
+     */
+    listUserTenants: {
+        methodKind: "unary";
+        input: typeof ListUserTenantsRequestSchema;
+        output: typeof ListUserTenantsResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.AssignRoleToTenant
+     */
+    assignRoleToTenant: {
+        methodKind: "unary";
+        input: typeof AssignRoleToTenantRequestSchema;
+        output: typeof AssignRoleToTenantResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.RemoveRoleFromTenant
+     */
+    removeRoleFromTenant: {
+        methodKind: "unary";
+        input: typeof RemoveRoleFromTenantRequestSchema;
+        output: typeof RemoveRoleFromTenantResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.ListAPIKeys
+     */
+    listAPIKeys: {
+        methodKind: "unary";
+        input: typeof ListAPIKeysRequestSchema;
+        output: typeof ListAPIKeysResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.DeleteAPIKey
+     */
+    deleteAPIKey: {
+        methodKind: "unary";
+        input: typeof DeleteAPIKeyRequestSchema;
+        output: typeof DeleteAPIKeyResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.CreateAPIKey
+     */
+    createAPIKey: {
+        methodKind: "unary";
+        input: typeof CreateAPIKeyRequestSchema;
+        output: typeof CreateAPIKeyResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.GetAPIKeyIdentity
+     */
+    getAPIKeyIdentity: {
+        methodKind: "unary";
+        input: typeof GetAPIKeyIdentityRequestSchema;
+        output: typeof GetAPIKeyIdentityResponseSchema;
+    };
+}>;
