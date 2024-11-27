@@ -1,5 +1,31 @@
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3 } from "@bufbuild/protobuf";
+import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv1";
+import type { Message } from "@bufbuild/protobuf";
+/**
+ * Describes the file aserto/directory/events/v2/events.proto.
+ */
+export declare const file_aserto_directory_events_v2_events: GenFile;
+/**
+ * @generated from message aserto.directory.events.v2.TenantSchemaChanged
+ */
+export type TenantSchemaChanged = Message<"aserto.directory.events.v2.TenantSchemaChanged"> & {
+    /**
+     * @generated from field: string tenant_id = 1;
+     */
+    tenantId: string;
+    /**
+     * @generated from field: string source_id = 2;
+     */
+    sourceId: string;
+    /**
+     * @generated from field: aserto.directory.events.v2.Directory directory = 3;
+     */
+    directory: Directory;
+};
+/**
+ * Describes the message aserto.directory.events.v2.TenantSchemaChanged.
+ * Use `create(TenantSchemaChangedSchema)` to create a new message.
+ */
+export declare const TenantSchemaChangedSchema: GenMessage<TenantSchemaChanged>;
 /**
  * @generated from enum aserto.directory.events.v2.Directory
  */
@@ -18,27 +44,6 @@ export declare enum Directory {
     TENANT = 2
 }
 /**
- * @generated from message aserto.directory.events.v2.TenantSchemaChanged
+ * Describes the enum aserto.directory.events.v2.Directory.
  */
-export declare class TenantSchemaChanged extends Message<TenantSchemaChanged> {
-    /**
-     * @generated from field: string tenant_id = 1;
-     */
-    tenantId: string;
-    /**
-     * @generated from field: string source_id = 2;
-     */
-    sourceId: string;
-    /**
-     * @generated from field: aserto.directory.events.v2.Directory directory = 3;
-     */
-    directory: Directory;
-    constructor(data?: PartialMessage<TenantSchemaChanged>);
-    static readonly runtime: typeof proto3;
-    static readonly typeName = "aserto.directory.events.v2.TenantSchemaChanged";
-    static readonly fields: FieldList;
-    static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TenantSchemaChanged;
-    static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TenantSchemaChanged;
-    static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TenantSchemaChanged;
-    static equals(a: TenantSchemaChanged | PlainMessage<TenantSchemaChanged> | undefined, b: TenantSchemaChanged | PlainMessage<TenantSchemaChanged> | undefined): boolean;
-}
+export declare const DirectorySchema: GenEnum<Directory>;
