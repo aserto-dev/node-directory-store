@@ -756,6 +756,198 @@ export type GetAPIKeyIdentityResponse = Message<"aserto.directory.store.v2.GetAP
  */
 export declare const GetAPIKeyIdentityResponseSchema: GenMessage<GetAPIKeyIdentityResponse>;
 /**
+ * @generated from message aserto.directory.store.v2.GetConfigRequest
+ */
+export type GetConfigRequest = Message<"aserto.directory.store.v2.GetConfigRequest"> & {
+    /**
+     * tenant id (UUID, aserto-id --type tenant)
+     *
+     * @generated from field: string tenant_id = 1;
+     */
+    tenantId: string;
+    /**
+     * object type
+     *
+     * @generated from field: string type = 2;
+     */
+    type: string;
+    /**
+     * object id
+     *
+     * @generated from field: string id = 3;
+     */
+    id: string;
+};
+/**
+ * Describes the message aserto.directory.store.v2.GetConfigRequest.
+ * Use `create(GetConfigRequestSchema)` to create a new message.
+ */
+export declare const GetConfigRequestSchema: GenMessage<GetConfigRequest>;
+/**
+ * @generated from message aserto.directory.store.v2.GetConfigResponse
+ */
+export type GetConfigResponse = Message<"aserto.directory.store.v2.GetConfigResponse"> & {
+    /**
+     * config properties
+     *
+     * @generated from field: google.protobuf.Struct config = 1;
+     */
+    config?: JsonObject;
+    /**
+     * config source template
+     *
+     * @generated from field: google.protobuf.Struct template = 2;
+     */
+    template?: JsonObject;
+};
+/**
+ * Describes the message aserto.directory.store.v2.GetConfigResponse.
+ * Use `create(GetConfigResponseSchema)` to create a new message.
+ */
+export declare const GetConfigResponseSchema: GenMessage<GetConfigResponse>;
+/**
+ * @generated from message aserto.directory.store.v2.SetConfigRequest
+ */
+export type SetConfigRequest = Message<"aserto.directory.store.v2.SetConfigRequest"> & {
+    /**
+     * tenant id (UUID, aserto-id --type tenant)
+     *
+     * @generated from field: string tenant_id = 1;
+     */
+    tenantId: string;
+    /**
+     * object type
+     *
+     * @generated from field: string type = 2;
+     */
+    type: string;
+    /**
+     * object id
+     *
+     * @generated from field: string id = 3;
+     */
+    id: string;
+    /**
+     * config properties
+     *
+     * @generated from field: google.protobuf.Struct config = 4;
+     */
+    config?: JsonObject;
+};
+/**
+ * Describes the message aserto.directory.store.v2.SetConfigRequest.
+ * Use `create(SetConfigRequestSchema)` to create a new message.
+ */
+export declare const SetConfigRequestSchema: GenMessage<SetConfigRequest>;
+/**
+ * @generated from message aserto.directory.store.v2.SetConfigResponse
+ */
+export type SetConfigResponse = Message<"aserto.directory.store.v2.SetConfigResponse"> & {
+    /**
+     * config properties
+     *
+     * @generated from field: google.protobuf.Struct config = 1;
+     */
+    config?: JsonObject;
+};
+/**
+ * Describes the message aserto.directory.store.v2.SetConfigResponse.
+ * Use `create(SetConfigResponseSchema)` to create a new message.
+ */
+export declare const SetConfigResponseSchema: GenMessage<SetConfigResponse>;
+/**
+ * @generated from message aserto.directory.store.v2.ListConfigsRequest
+ */
+export type ListConfigsRequest = Message<"aserto.directory.store.v2.ListConfigsRequest"> & {
+    /**
+     * tenant id (UUID, aserto-id --type tenant)
+     *
+     * @generated from field: string tenant_id = 1;
+     */
+    tenantId: string;
+    /**
+     * object type
+     *
+     * @generated from field: string type = 2;
+     */
+    type: string;
+    /**
+     * pagination request
+     *
+     * @generated from field: aserto.directory.common.v3.PaginationRequest page = 9;
+     */
+    page?: PaginationRequest;
+};
+/**
+ * Describes the message aserto.directory.store.v2.ListConfigsRequest.
+ * Use `create(ListConfigsRequestSchema)` to create a new message.
+ */
+export declare const ListConfigsRequestSchema: GenMessage<ListConfigsRequest>;
+/**
+ * @generated from message aserto.directory.store.v2.ListConfigsResponse
+ */
+export type ListConfigsResponse = Message<"aserto.directory.store.v2.ListConfigsResponse"> & {
+    /**
+     * list of config IDs
+     *
+     * @generated from field: repeated string results = 1;
+     */
+    results: string[];
+    /**
+     * pagination response
+     *
+     * @generated from field: aserto.directory.common.v3.PaginationResponse page = 9;
+     */
+    page?: PaginationResponse;
+};
+/**
+ * Describes the message aserto.directory.store.v2.ListConfigsResponse.
+ * Use `create(ListConfigsResponseSchema)` to create a new message.
+ */
+export declare const ListConfigsResponseSchema: GenMessage<ListConfigsResponse>;
+/**
+ * @generated from message aserto.directory.store.v2.DeleteConfigRequest
+ */
+export type DeleteConfigRequest = Message<"aserto.directory.store.v2.DeleteConfigRequest"> & {
+    /**
+     * tenant id (UUID, aserto-id --type tenant)
+     *
+     * @generated from field: string tenant_id = 1;
+     */
+    tenantId: string;
+    /**
+     * object type
+     *
+     * @generated from field: string type = 2;
+     */
+    type: string;
+    /**
+     * object id
+     *
+     * @generated from field: string id = 3;
+     */
+    id: string;
+};
+/**
+ * Describes the message aserto.directory.store.v2.DeleteConfigRequest.
+ * Use `create(DeleteConfigRequestSchema)` to create a new message.
+ */
+export declare const DeleteConfigRequestSchema: GenMessage<DeleteConfigRequest>;
+/**
+ * @generated from message aserto.directory.store.v2.DeleteConfigResponse
+ */
+export type DeleteConfigResponse = Message<"aserto.directory.store.v2.DeleteConfigResponse"> & {
+    /**
+     * @generated from field: google.protobuf.Empty result = 1;
+     */
+    result?: Empty;
+};
+/**
+ * Describes the message aserto.directory.store.v2.DeleteConfigResponse.
+ * Use `create(DeleteConfigResponseSchema)` to create a new message.
+ */
+export declare const DeleteConfigResponseSchema: GenMessage<DeleteConfigResponse>;
+/**
  * @generated from enum aserto.directory.store.v2.Schema
  */
 export declare enum Schema {
@@ -928,5 +1120,37 @@ export declare const Store: GenService<{
         methodKind: "unary";
         input: typeof GetAPIKeyIdentityRequestSchema;
         output: typeof GetAPIKeyIdentityResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.GetConfig
+     */
+    getConfig: {
+        methodKind: "unary";
+        input: typeof GetConfigRequestSchema;
+        output: typeof GetConfigResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.SetConfig
+     */
+    setConfig: {
+        methodKind: "unary";
+        input: typeof SetConfigRequestSchema;
+        output: typeof SetConfigResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.ListConfigs
+     */
+    listConfigs: {
+        methodKind: "unary";
+        input: typeof ListConfigsRequestSchema;
+        output: typeof ListConfigsResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.DeleteConfig
+     */
+    deleteConfig: {
+        methodKind: "unary";
+        input: typeof DeleteConfigRequestSchema;
+        output: typeof DeleteConfigResponseSchema;
     };
 }>;
