@@ -1,5 +1,5 @@
 import type { GenEnum, GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv1";
-import type { Empty, Timestamp } from "@bufbuild/protobuf/wkt";
+import type { Empty, Timestamp, Value } from "@bufbuild/protobuf/wkt";
 import type { PaginationRequest, PaginationResponse } from "../../common/v3/common_pb";
 import type { JsonObject, Message } from "@bufbuild/protobuf";
 /**
@@ -948,6 +948,186 @@ export type DeleteConfigResponse = Message<"aserto.directory.store.v2.DeleteConf
  */
 export declare const DeleteConfigResponseSchema: GenMessage<DeleteConfigResponse>;
 /**
+ * @generated from message aserto.directory.store.v2.GetSecretRequest
+ */
+export type GetSecretRequest = Message<"aserto.directory.store.v2.GetSecretRequest"> & {
+    /**
+     * tenant id (UUID, aserto-id --type tenant)
+     *
+     * @generated from field: string tenant_id = 1;
+     */
+    tenantId: string;
+    /**
+     * secret name
+     *
+     * @generated from field: string secret = 2;
+     */
+    secret: string;
+    /**
+     * secret key
+     *
+     * @generated from field: string key = 3;
+     */
+    key: string;
+};
+/**
+ * Describes the message aserto.directory.store.v2.GetSecretRequest.
+ * Use `create(GetSecretRequestSchema)` to create a new message.
+ */
+export declare const GetSecretRequestSchema: GenMessage<GetSecretRequest>;
+/**
+ * @generated from message aserto.directory.store.v2.GetSecretResponse
+ */
+export type GetSecretResponse = Message<"aserto.directory.store.v2.GetSecretResponse"> & {
+    /**
+     * secret value
+     *
+     * @generated from field: google.protobuf.Value value = 1;
+     */
+    value?: Value;
+};
+/**
+ * Describes the message aserto.directory.store.v2.GetSecretResponse.
+ * Use `create(GetSecretResponseSchema)` to create a new message.
+ */
+export declare const GetSecretResponseSchema: GenMessage<GetSecretResponse>;
+/**
+ * @generated from message aserto.directory.store.v2.SetSecretRequest
+ */
+export type SetSecretRequest = Message<"aserto.directory.store.v2.SetSecretRequest"> & {
+    /**
+     * tenant id (UUID, aserto-id --type tenant)
+     *
+     * @generated from field: string tenant_id = 1;
+     */
+    tenantId: string;
+    /**
+     * secret name
+     *
+     * @generated from field: string secret = 2;
+     */
+    secret: string;
+    /**
+     * secret key
+     *
+     * @generated from field: string key = 3;
+     */
+    key: string;
+    /**
+     * secret value
+     *
+     * @generated from field: google.protobuf.Value value = 4;
+     */
+    value?: Value;
+};
+/**
+ * Describes the message aserto.directory.store.v2.SetSecretRequest.
+ * Use `create(SetSecretRequestSchema)` to create a new message.
+ */
+export declare const SetSecretRequestSchema: GenMessage<SetSecretRequest>;
+/**
+ * @generated from message aserto.directory.store.v2.SetSecretResponse
+ */
+export type SetSecretResponse = Message<"aserto.directory.store.v2.SetSecretResponse"> & {
+    /**
+     * secret value
+     *
+     * @generated from field: google.protobuf.Value value = 1;
+     */
+    value?: Value;
+};
+/**
+ * Describes the message aserto.directory.store.v2.SetSecretResponse.
+ * Use `create(SetSecretResponseSchema)` to create a new message.
+ */
+export declare const SetSecretResponseSchema: GenMessage<SetSecretResponse>;
+/**
+ * @generated from message aserto.directory.store.v2.ListSecretsRequest
+ */
+export type ListSecretsRequest = Message<"aserto.directory.store.v2.ListSecretsRequest"> & {
+    /**
+     * tenant id (UUID, aserto-id --type tenant)
+     *
+     * @generated from field: string tenant_id = 1;
+     */
+    tenantId: string;
+    /**
+     * pagination request
+     *
+     * @generated from field: aserto.directory.common.v3.PaginationRequest page = 9;
+     */
+    page?: PaginationRequest;
+};
+/**
+ * Describes the message aserto.directory.store.v2.ListSecretsRequest.
+ * Use `create(ListSecretsRequestSchema)` to create a new message.
+ */
+export declare const ListSecretsRequestSchema: GenMessage<ListSecretsRequest>;
+/**
+ * @generated from message aserto.directory.store.v2.ListSecretsResponse
+ */
+export type ListSecretsResponse = Message<"aserto.directory.store.v2.ListSecretsResponse"> & {
+    /**
+     * list of secrets
+     *
+     * @generated from field: repeated string results = 1;
+     */
+    results: string[];
+    /**
+     * pagination response
+     *
+     * @generated from field: aserto.directory.common.v3.PaginationResponse page = 9;
+     */
+    page?: PaginationResponse;
+};
+/**
+ * Describes the message aserto.directory.store.v2.ListSecretsResponse.
+ * Use `create(ListSecretsResponseSchema)` to create a new message.
+ */
+export declare const ListSecretsResponseSchema: GenMessage<ListSecretsResponse>;
+/**
+ * @generated from message aserto.directory.store.v2.DeleteSecretRequest
+ */
+export type DeleteSecretRequest = Message<"aserto.directory.store.v2.DeleteSecretRequest"> & {
+    /**
+     * tenant id (UUID, aserto-id --type tenant)
+     *
+     * @generated from field: string tenant_id = 1;
+     */
+    tenantId: string;
+    /**
+     * secret name
+     *
+     * @generated from field: string secret = 2;
+     */
+    secret: string;
+    /**
+     * secret key
+     *
+     * @generated from field: string key = 3;
+     */
+    key: string;
+};
+/**
+ * Describes the message aserto.directory.store.v2.DeleteSecretRequest.
+ * Use `create(DeleteSecretRequestSchema)` to create a new message.
+ */
+export declare const DeleteSecretRequestSchema: GenMessage<DeleteSecretRequest>;
+/**
+ * @generated from message aserto.directory.store.v2.DeleteSecretResponse
+ */
+export type DeleteSecretResponse = Message<"aserto.directory.store.v2.DeleteSecretResponse"> & {
+    /**
+     * @generated from field: google.protobuf.Empty result = 1;
+     */
+    result?: Empty;
+};
+/**
+ * Describes the message aserto.directory.store.v2.DeleteSecretResponse.
+ * Use `create(DeleteSecretResponseSchema)` to create a new message.
+ */
+export declare const DeleteSecretResponseSchema: GenMessage<DeleteSecretResponse>;
+/**
  * @generated from enum aserto.directory.store.v2.Schema
  */
 export declare enum Schema {
@@ -1152,5 +1332,37 @@ export declare const Store: GenService<{
         methodKind: "unary";
         input: typeof DeleteConfigRequestSchema;
         output: typeof DeleteConfigResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.GetSecret
+     */
+    getSecret: {
+        methodKind: "unary";
+        input: typeof GetSecretRequestSchema;
+        output: typeof GetSecretResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.SetSecret
+     */
+    setSecret: {
+        methodKind: "unary";
+        input: typeof SetSecretRequestSchema;
+        output: typeof SetSecretResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.ListSecrets
+     */
+    listSecrets: {
+        methodKind: "unary";
+        input: typeof ListSecretsRequestSchema;
+        output: typeof ListSecretsResponseSchema;
+    };
+    /**
+     * @generated from rpc aserto.directory.store.v2.Store.DeleteSecret
+     */
+    deleteSecret: {
+        methodKind: "unary";
+        input: typeof DeleteSecretRequestSchema;
+        output: typeof DeleteSecretResponseSchema;
     };
 }>;
