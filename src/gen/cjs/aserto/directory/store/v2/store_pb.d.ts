@@ -1,5 +1,5 @@
 import type { GenEnum, GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv1";
-import type { Empty, Timestamp, Value } from "@bufbuild/protobuf/wkt";
+import type { Any, Empty, Timestamp, Value } from "@bufbuild/protobuf/wkt";
 import type { PaginationRequest, PaginationResponse } from "../../common/v3/common_pb";
 import type { JsonObject, Message } from "@bufbuild/protobuf";
 /**
@@ -790,15 +790,15 @@ export type GetConfigResponse = Message<"aserto.directory.store.v2.GetConfigResp
     /**
      * config properties
      *
-     * @generated from field: google.protobuf.Struct config = 1;
+     * @generated from field: google.protobuf.Any config = 1;
      */
-    config?: JsonObject;
+    config?: Any;
     /**
      * config source template
      *
-     * @generated from field: google.protobuf.Struct template = 2;
+     * @generated from field: google.protobuf.Any template = 2;
      */
-    template?: JsonObject;
+    template?: Any;
 };
 /**
  * Describes the message aserto.directory.store.v2.GetConfigResponse.
@@ -830,9 +830,9 @@ export type SetConfigRequest = Message<"aserto.directory.store.v2.SetConfigReque
     /**
      * config properties
      *
-     * @generated from field: google.protobuf.Struct config = 4;
+     * @generated from field: google.protobuf.Any config = 4;
      */
-    config?: JsonObject;
+    config?: Any;
 };
 /**
  * Describes the message aserto.directory.store.v2.SetConfigRequest.
@@ -846,9 +846,9 @@ export type SetConfigResponse = Message<"aserto.directory.store.v2.SetConfigResp
     /**
      * config properties
      *
-     * @generated from field: google.protobuf.Struct config = 1;
+     * @generated from field: google.protobuf.Any config = 1;
      */
-    config?: JsonObject;
+    config?: Any;
 };
 /**
  * Describes the message aserto.directory.store.v2.SetConfigResponse.
