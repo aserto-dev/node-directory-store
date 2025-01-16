@@ -1,6 +1,6 @@
 {
   "name": "@aserto/node-directory-store",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Node gRPC bindings for the Aserto directory store",
   "scripts": {
     "gen": "rm -rf src && buf generate --include-imports ${BUF_PATH:-buf.build/aserto-dev/directory-store} && rm -rf src/gen/cjs && tsc",
